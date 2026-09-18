@@ -7,7 +7,7 @@
 .hero .actions .appointment{background:linear-gradient(105deg,#315db1,#19356d)!important;color:#fff!important}
 .hero .actions .telephone{background:linear-gradient(105deg,#92c957,#5f9d32)!important;color:#fff!important;text-shadow:0 1px 1px rgba(0,0,0,.18)}
 /* Consentimiento: fondo negro, tres opciones reales y cierre independiente. */
-.cookie-banner{position:fixed!important;bottom:0!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;z-index:9999!important;background:#151515!important;color:#fff!important;border:0!important;border-radius:0!important;box-shadow:0 -5px 22px rgba(0,0,0,.18)!important;padding:20px 56px 20px 32px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:22px!important;flex-wrap:nowrap!important}
+.cookie-banner{position:fixed!important;bottom:0!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;z-index:20000!important;background:#151515!important;color:#fff!important;border:0!important;border-radius:0!important;box-shadow:0 -5px 22px rgba(0,0,0,.18)!important;padding:20px 56px 20px 32px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:22px!important;flex-wrap:nowrap!important}
 .cookie-banner[hidden]{display:none!important}
 .cookie-banner p{flex:1 1 620px!important;max-width:900px!important;color:#fff!important;font-size:13px!important;line-height:1.55!important;font-weight:600!important;text-align:center!important;margin:0!important}
 .cookie-actions{display:flex;flex:0 0 auto;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}

@@ -189,3 +189,15 @@ NO TOCADO / PENDIENTE DE DECISIÓN DEL CLIENTE:
   plantilla original, no clientes reales — no se han tocado en esta
   pasada, pero no deberían publicarse como si fueran clientes
   reales de SmartSheets.
+
+BUG REAL — el botón flotante del chatbot se veía por encima de la
+barra de cookies en vez de quedar oculto detrás. Causa: había dos
+reglas ".cookie-banner" con z-index distinto en dos archivos CSS
+(hero-degradado.css con 20000, flujopro-controls.css con 9999), y
+como flujopro-controls.css se carga el último en el <head>, su valor
+más bajo (9999) ganaba sobre el z-index del widget de chat (10011-
+10012), dejando el botón del chat por delante de la barra. Corregido
+igualando el z-index de flujopro-controls.css a 20000, coincidiendo
+con hero-degradado.css, de forma que la barra de cookies siempre
+tapa tanto el botón del chatbot como el de WhatsApp mientras está
+visible.
