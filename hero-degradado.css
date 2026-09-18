@@ -11,7 +11,6 @@
   background-size: 100% 100% !important;
   background-position: center !important;
 }
-/* Sustituir la retícula anterior por un velo casi imperceptible: la gráfica SVG queda nítida. */
 .hero::before {
   background-image: linear-gradient(rgba(38, 111, 67, .032) 1px, transparent 1px), linear-gradient(90deg, rgba(38, 111, 67, .032) 1px, transparent 1px) !important;
   background-size: 52px 52px !important;
@@ -36,3 +35,10 @@
   .hero::after { background: radial-gradient(ellipse 85% 48% at 50% 45%, rgba(255,255,255,.9), transparent) !important; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-side { animation: none !important; } }
+
+/* Barra de cookies: fondo negro solicitado, sin modificar el hero. */
+.cookie-banner{left:0!important;right:0!important;bottom:0!important;transform:none!important;width:100%!important;max-width:none!important;background:#101010!important;color:#fff!important;border:0!important;border-radius:0!important;box-shadow:0 -4px 20px rgba(0,0,0,.16)!important;padding:20px 32px!important;gap:12px!important;justify-content:center!important}
+.cookie-banner p{color:#fff!important;max-width:900px!important;text-align:center!important;font-weight:600!important;line-height:1.5!important}
+.cookie-banner button,.cookie-banner a{background:#16964e!important;color:#fff!important;border:0!important;border-radius:28px!important;padding:12px 20px!important;font-weight:700!important;text-decoration:none!important;white-space:nowrap!important}
+.cookie-banner button:hover,.cookie-banner a:hover{background:#118044!important}
+@media(max-width:600px){.cookie-banner{padding:16px 14px!important;gap:8px!important}.cookie-banner p{font-size:12px!important;flex-basis:100%}.cookie-banner button,.cookie-banner a{padding:10px 14px!important;font-size:12px!important}}
