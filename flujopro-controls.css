@@ -1,0 +1,20 @@
+/* Botones del hero: altura, contraste y acabado uniforme. */
+.hero .actions{max-width:560px;gap:12px;margin:24px auto 0}
+.hero .actions .button{min-height:54px;padding:15px 24px;border-radius:999px;font-weight:800;font-size:14px;line-height:1.35;letter-spacing:.01em;border:1px solid rgba(255,255,255,.15);box-shadow:0 7px 19px rgba(21,46,72,.17);transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.hero .actions .button:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(21,46,72,.23);filter:brightness(1.06)}
+.hero .actions .button:focus-visible,.cookie-banner button:focus-visible,.cookie-banner a:focus-visible{outline:3px solid #9cd96a;outline-offset:3px}
+.hero .actions .whatsapp{background:linear-gradient(105deg,#30c66c,#16824d)!important;color:#fff!important}
+.hero .actions .appointment{background:linear-gradient(105deg,#315db1,#19356d)!important;color:#fff!important}
+.hero .actions .telephone{background:linear-gradient(105deg,#92c957,#5f9d32)!important;color:#fff!important;text-shadow:0 1px 1px rgba(0,0,0,.18)}
+/* Consentimiento: fondo negro, tres opciones reales y cierre independiente. */
+.cookie-banner{position:fixed!important;bottom:0!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;z-index:9999!important;background:#151515!important;color:#fff!important;border:0!important;border-radius:0!important;box-shadow:0 -5px 22px rgba(0,0,0,.18)!important;padding:20px 56px 20px 32px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:22px!important;flex-wrap:nowrap!important}
+.cookie-banner[hidden]{display:none!important}
+.cookie-banner p{flex:1 1 620px!important;max-width:900px!important;color:#fff!important;font-size:13px!important;line-height:1.55!important;font-weight:600!important;text-align:center!important;margin:0!important}
+.cookie-actions{display:flex;flex:0 0 auto;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.cookie-banner .cookie-actions button,.cookie-banner .cookie-actions a{display:inline-flex!important;align-items:center;justify-content:center;min-height:42px;padding:10px 19px!important;border:0!important;border-radius:999px!important;background:#198c4b!important;color:#fff!important;font-size:13px!important;line-height:1.2!important;font-weight:800!important;text-decoration:none!important;white-space:nowrap;cursor:pointer;transition:background .2s,transform .2s}
+.cookie-banner .cookie-actions button:hover,.cookie-banner .cookie-actions a:hover{background:#22a65c!important;transform:translateY(-1px)}
+.cookie-banner .cookie-close{position:absolute!important;right:14px!important;top:10px!important;display:grid!important;place-items:center!important;width:30px!important;height:30px!important;padding:0!important;background:transparent!important;border:0!important;color:#ddd!important;font-size:24px!important;line-height:1!important;cursor:pointer}
+.cookie-banner .cookie-close:hover{color:#fff!important}
+@media(max-width:1000px){.cookie-banner{flex-direction:column!important;gap:13px!important;padding:18px 42px 18px 20px!important}.cookie-banner p{flex:0 1 auto!important;max-width:760px!important}.cookie-actions{width:100%}}
+@media(max-width:600px){.hero .actions .button{font-size:clamp(12px,3.3vw,14px);padding:13px 12px;min-height:54px}.cookie-banner{padding:15px 35px 16px 12px!important;gap:12px!important}.cookie-banner p{font-size:11px!important;line-height:1.45!important}.cookie-actions{gap:7px}.cookie-banner .cookie-actions button,.cookie-banner .cookie-actions a{font-size:11px!important;min-height:37px;padding:9px 12px!important}.cookie-banner .cookie-close{right:5px!important;top:5px!important}}
+@media(prefers-reduced-motion:reduce){.hero .actions .button,.cookie-banner .cookie-actions button,.cookie-banner .cookie-actions a{transition:none!important}}
