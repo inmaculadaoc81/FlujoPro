@@ -1,0 +1,38 @@
+/* Hero FlujoPro: degradado verde de referencia con centro despejado y trazos SVG en los bordes. */
+.hero {
+  background-color: #fff !important;
+  background-image:
+    url('hero-degradado.svg'),
+    radial-gradient(ellipse 48% 65% at -7% 13%, rgba(92, 190, 116, .40) 0%, rgba(133, 216, 148, .19) 44%, transparent 86%),
+    radial-gradient(ellipse 48% 64% at 107% 16%, rgba(100, 190, 126, .39) 0%, rgba(154, 222, 159, .17) 46%, transparent 86%),
+    radial-gradient(ellipse 65% 43% at 50% 106%, rgba(111, 205, 139, .27) 0%, rgba(178, 232, 189, .12) 55%, transparent 100%),
+    linear-gradient(180deg, #eef9f0 0%, #f7fcf8 25%, #fff 43%, #fff 68%, #f0faef 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+}
+/* Sustituir la retícula anterior por un velo casi imperceptible: la gráfica SVG queda nítida. */
+.hero::before {
+  background-image: linear-gradient(rgba(38, 111, 67, .032) 1px, transparent 1px), linear-gradient(90deg, rgba(38, 111, 67, .032) 1px, transparent 1px) !important;
+  background-size: 52px 52px !important;
+  opacity: .6 !important;
+}
+.hero::after {
+  background: radial-gradient(ellipse 46% 47% at 50% 47%, rgba(255,255,255,.84) 0%, rgba(255,255,255,.45) 56%, transparent 100%) !important;
+  z-index: -1 !important;
+}
+.hero-inner { position: relative; z-index: 2; }
+/* Se conservan intactos el tamaño, la colocación y la animación de .hero-side. */
+@media (max-width: 900px) {
+  .hero {
+    background-image:
+      url('hero-degradado.svg'),
+      radial-gradient(ellipse 80% 30% at 0% 0%, rgba(108, 197, 126, .30), transparent 90%),
+      radial-gradient(ellipse 85% 34% at 100% 100%, rgba(114, 203, 139, .29), transparent 90%),
+      linear-gradient(180deg, #eff9f1 0%, #fff 24%, #fff 73%, #edf8f0 100%) !important;
+    background-size: auto 100%, 100% 100%, 100% 100%, 100% 100% !important;
+  }
+  .hero::before { opacity: .35 !important; }
+  .hero::after { background: radial-gradient(ellipse 85% 48% at 50% 45%, rgba(255,255,255,.9), transparent) !important; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-side { animation: none !important; } }
