@@ -201,3 +201,28 @@ igualando el z-index de flujopro-controls.css a 20000, coincidiendo
 con hero-degradado.css, de forma que la barra de cookies siempre
 tapa tanto el botón del chatbot como el de WhatsApp mientras está
 visible.
+
+BUG REAL — el formulario de contacto no enviaba nada, redirigía a
+WhatsApp con un mensaje preformado y mostraba "Se abrirá WhatsApp con
+tu consulta preparada...". Además:
+- api/contacto.js y package.json eran una copia literal del backend
+  de SmartSheets (decía "SmartSheets" en el remitente y el asunto del
+  correo, y el nombre del paquete era
+  "smartsheets-automatizaciones-excel"). Corregido a FlujoPro en
+  ambos archivos.
+- Los campos del formulario estaban en inglés (name/phone/company/
+  message) mientras que el backend espera español (nombre/telefono/
+  empresa/mensaje) — ni siquiera con el envío corregido habría
+  funcionado, porque el backend habría recibido los campos vacíos.
+  Renombrados los campos a español y añadido "required" al de
+  empresa, ya que el backend la exige.
+- Sustituido el script que abría WhatsApp por el envío real al
+  backend (fetch a /api/contacto), con los mensajes de estado
+  estándar ("Enviando...", "Consulta enviada correctamente." o el
+  aviso de contactar por teléfono/WhatsApp si falla), quitando el
+  texto "Se abrirá WhatsApp...".
+
+IMPORTANTE: para que el formulario funcione de verdad hace falta
+configurar en Vercel las variables SMTP_HOST, SMTP_PORT, SMTP_SECURE,
+SMTP_USER, SMTP_PASS y CONTACT_EMAIL (mismo patrón que el resto de la
+familia).
