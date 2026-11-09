@@ -98,3 +98,14 @@ WhatsApp/Cal.com en otras webs de la familia):
 IMPORTANTE: para que el formulario envíe correos de verdad hace falta
 configurar en Vercel las variables SMTP_HOST, SMTP_PORT, SMTP_SECURE,
 SMTP_USER, SMTP_PASS y CONTACT_EMAIL.
+
+BLOG (/blog):
+- Los artículos NO viven en este repositorio: los genera y publica el agente
+  SEO de Kelatos (Agentes V2 → organización «FlujoPro», clave flujopro)
+  y se leen en vivo de la API pública de Kelatos, sin token:
+  https://db.affirmatechnology.com/kelatos-api/publico/blog?org=flujopro
+- api/blog.js + lib/blog.js generan /blog y /blog/<slug> en el servidor
+  (copian cabecera, pie, WhatsApp, chat, cookies y el script final de index.html).
+- api/sitemap.js genera /sitemap.xml (se eliminó el sitemap.xml estático).
+- Estilos en blog.css. Enlace «Blog» en el menú (escritorio y móvil) y en el pie.
+- vercel.json redirige a la home las URLs antiguas; el blog queda fuera.
