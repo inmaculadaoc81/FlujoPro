@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Manrope, Sora } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -9,15 +9,14 @@ import JsonLd from "@/components/seo/JsonLd";
 import { getAllPosts } from "@/lib/blog";
 import { BUSINESS, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
 
-const inter = Manrope({
+const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const poppins = Sora({
-  variable: "--font-poppins",
+const mono = Geist_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -40,8 +39,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#fbf8f3]">
+    <html lang="es" className={`${inter.variable} ${mono.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-[#040507] text-white">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HLCQMYWSQL"
           strategy="afterInteractive"
