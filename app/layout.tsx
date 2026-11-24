@@ -4,6 +4,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Movimiento from "@/components/anim/Movimiento";
 import FlotanteWhatsApp from "@/components/layout/FlotanteWhatsApp";
 import JsonLd from "@/components/seo/JsonLd";
 import { getAllPosts } from "@/lib/blog";
@@ -66,10 +67,12 @@ export default async function RootLayout({
             areaServed: "ES",
           }}
         />
-        <Header showBlog={(await getAllPosts()).length > 0} />
-        {children}
-        <Footer />
-        <FlotanteWhatsApp />
+        <Movimiento>
+          <Header showBlog={(await getAllPosts()).length > 0} />
+          {children}
+          <Footer />
+          <FlotanteWhatsApp />
+        </Movimiento>
       </body>
     </html>
   );

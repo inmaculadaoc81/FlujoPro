@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { UseCaseArt } from "@/components/iso/Iso";
 
 const CASOS = [
@@ -33,7 +34,11 @@ export default function UseCases() {
       <div className="p-3 md:p-4">
         <div className="fp-frame relative overflow-hidden rounded-2xl p-3 md:p-10">
           <div className="fp-brackets relative rounded-md bg-[#0b0c0e] px-4 pb-24 pt-8 md:px-16">
-            <UseCaseArt glyph={caso.glyph} />
+            <AnimatePresence mode="wait">
+              <motion.div key={caso.id} initial={{ opacity: 0, y: 14, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -10, scale: 0.98 }} transition={{ duration: 0.35 }}>
+                <UseCaseArt glyph={caso.glyph} />
+              </motion.div>
+            </AnimatePresence>
           </div>
           <div className="relative -mt-20 grid gap-3 px-1 md:mx-auto md:max-w-[640px] md:grid-cols-3 md:px-0">
             {DATOS.map((d) => (
