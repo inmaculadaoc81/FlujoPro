@@ -3,6 +3,8 @@ import Script from "next/script";
 import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import FlotanteWhatsApp from "@/components/layout/FlotanteWhatsApp";
 import JsonLd from "@/components/seo/JsonLd";
 import { getAllPosts } from "@/lib/blog";
 import { BUSINESS, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
@@ -39,7 +41,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white">
+      <body className="min-h-full flex flex-col bg-[#fbf8f3]">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HLCQMYWSQL"
           strategy="afterInteractive"
@@ -67,6 +69,8 @@ export default async function RootLayout({
         />
         <Header showBlog={(await getAllPosts()).length > 0} />
         {children}
+        <Footer />
+        <FlotanteWhatsApp />
       </body>
     </html>
   );
