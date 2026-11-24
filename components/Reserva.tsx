@@ -7,7 +7,7 @@ export default function Reserva() {
     <Cal
       calLink="n8n-automatizaciones/30min"
       style={{ width: "100%", minHeight: 680 }}
-      config={{ layout: "month_view", theme: "dark" }}
+      config={{ layout: "month_view", theme: "light" }}
     />
   );
 }

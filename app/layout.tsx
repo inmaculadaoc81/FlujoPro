@@ -41,7 +41,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${mono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#040507] text-white">
+      <body className="min-h-full flex flex-col bg-white text-[#0b0d10]">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HLCQMYWSQL"
           strategy="afterInteractive"

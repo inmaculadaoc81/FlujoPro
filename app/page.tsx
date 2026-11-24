@@ -37,7 +37,7 @@ function Cabecera({ pill, titulo, texto, centrado = true }: { pill: string; titu
     <Reveal className={`px-5 pb-12 pt-20 md:px-9 ${centrado ? "text-center" : ""}`}>
       <Pill>{pill}</Pill>
       <h2 className={`fp-title mt-5 text-[34px] md:text-[48px] ${centrado ? "mx-auto max-w-[760px]" : "max-w-[760px]"}`}>{titulo}</h2>
-      {texto ? <p className={`mt-4 text-[16px] leading-relaxed text-[#8d9094] ${centrado ? "mx-auto max-w-[560px]" : "max-w-[560px]"}`}>{texto}</p> : null}
+      {texto ? <p className={`mt-4 text-[16px] leading-relaxed text-[#5b6168] ${centrado ? "mx-auto max-w-[560px]" : "max-w-[560px]"}`}>{texto}</p> : null}
     </Reveal>
   );
 }
@@ -46,7 +46,7 @@ function Tarjeta({ titulo, texto, children, className = "", delay = 0 }: { titul
     <Reveal as="article" delay={delay} y={36} className={`fp-card flex flex-col overflow-hidden ${className}`}>
       <div className="px-6 pb-2 pt-6">
         <h3 className="text-[19px] font-medium tracking-tight text-white">{titulo}</h3>
-        <p className="mt-2.5 max-w-[34rem] text-[14px] leading-snug text-[#8d9094]">{texto}</p>
+        <p className="mt-2.5 max-w-[34rem] text-[14px] leading-snug text-[#5b6168]">{texto}</p>
       </div>
       <div className="mt-auto flex flex-1 items-end justify-center px-4 pb-4 pt-2">{children}</div>
     </Reveal>
@@ -55,7 +55,7 @@ function Tarjeta({ titulo, texto, children, className = "", delay = 0 }: { titul
 
 export default function Home() {
   return (
-    <main className="bg-[#040507] text-white">
+    <main className="bg-white text-[#0b0d10]">
       {/* ─────────── PORTADA ─────────── */}
       <section className="fp-aurora relative overflow-hidden pt-[70px]">
         <div className="fp-dots pointer-events-none absolute inset-0 opacity-50 [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
@@ -68,7 +68,7 @@ export default function Home() {
               </h1>
             </Reveal>
             <Reveal y={22} delay={0.3}>
-              <p className="mt-6 max-w-[560px] text-[16px] leading-relaxed text-[#8d9094]">
+              <p className="mt-6 max-w-[560px] text-[16px] leading-relaxed text-[#5b6168]">
                 Convertimos las tareas que se repiten cada día en flujos claros, conectados y fáciles de seguir.
               </p>
             </Reveal>
@@ -90,25 +90,25 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── HERRAMIENTAS ─────────── */}
-      <section className="fp-wrap bg-[#050608] px-5 py-12 text-center md:px-9">
-        <Reveal><p className="text-[18px] text-[#e6e8ea]">Conectamos las herramientas que ya usas</p></Reveal>
-        <div className="mx-auto mt-9 flex max-w-[960px] flex-wrap items-center justify-center gap-x-12 gap-y-6 text-[22px] font-semibold tracking-tight text-[#4b4f54]">
+      <section className="fp-wrap bg-[#fafbfc] px-5 py-12 text-center md:px-9">
+        <Reveal><p className="text-[18px] text-[#14171a]">Conectamos las herramientas que ya usas</p></Reveal>
+        <div className="mx-auto mt-9 flex max-w-[960px] flex-wrap items-center justify-center gap-x-12 gap-y-6 text-[22px] font-semibold tracking-tight text-[#8a929a]">
           {HERRAMIENTAS.map((h, i) => <Reveal key={h} delay={i * 0.07} y={14}><span className="transition hover:text-[#b5fffc]">{h}</span></Reveal>)}
         </div>
       </section>
       <Hatch />
 
       {/* ─────────── CÓMO FUNCIONA ─────────── */}
-      <section id="como-funciona" className="fp-wrap bg-[#040507]">
+      <section id="como-funciona" className="fp-wrap bg-white">
         <Cabecera pill="Cómo funciona" titulo="Cómo FlujoPro entiende, diseña y pone en marcha tu trabajo" texto="Primero entendemos tu proceso. Después diseñamos el flujo que lo hace más sencillo." />
-        <div className="grid border-t border-[#16181b] md:grid-cols-3">
+        <div className="grid border-t border-[#e9ebee] md:grid-cols-3">
           {PASOS.map((p, i) => (
-            <Reveal key={p.n} delay={i * 0.14} y={40} className={`border-[#16181b] ${i < 2 ? "md:border-r" : ""}`}>
-              <div className="fp-mono border-b border-[#16181b] bg-[#0c0f0f] px-6 py-4 text-[17px] text-[#84dded]">PASO {p.n}</div>
+            <Reveal key={p.n} delay={i * 0.14} y={40} className={`border-[#e9ebee] ${i < 2 ? "md:border-r" : ""}`}>
+              <div className="fp-mono border-b border-[#e9ebee] bg-[#f6f8f9] px-6 py-4 text-[17px] text-[#0e7c8f]">PASO {p.n}</div>
               <div className="flex h-[270px] items-center justify-center px-6 pt-2">{p.art}</div>
               <div className="px-6 pb-10 pt-3">
                 <h3 className="text-[22px] font-medium tracking-tight">{p.t}</h3>
-                <p className="mt-3 text-[14.5px] leading-snug text-[#8d9094]">{p.d}</p>
+                <p className="mt-3 text-[14.5px] leading-snug text-[#5b6168]">{p.d}</p>
               </div>
             </Reveal>
           ))}
@@ -117,9 +117,9 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── SOLUCIONES ─────────── */}
-      <section id="servicios" className="fp-wrap bg-[#040507]">
+      <section id="servicios" className="fp-wrap bg-white">
         <Cabecera pill="Soluciones" titulo="Que el trabajo avance. Sin perseguirlo." texto="Hay tareas que se repiten cada día. Las convertimos en flujos claros, conectados y fáciles de seguir." />
-        <div className="border-t border-[#16181b] px-4 py-5 md:px-[106px]">
+        <div className="border-t border-[#e9ebee] px-4 py-5 md:px-[106px]">
           <div className="grid gap-4 md:grid-cols-2">
             <Tarjeta className="md:row-span-2" delay={0} titulo="Automatización de flujos de trabajo" texto="Conectamos pasos, responsables y herramientas para que cada tarea llegue a quien corresponde.">
               <div className="w-full max-w-[380px]"><FeatArtBig /></div>
@@ -141,20 +141,20 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── POR QUÉ ─────────── */}
-      <section className="fp-wrap bg-[#040507]">
+      <section className="fp-wrap bg-white">
         <div className="grid items-center gap-8 px-5 py-20 md:grid-cols-[1fr_1fr] md:px-9">
           <Reveal x={-30} y={0}>
             <Pill>¿Por qué FlujoPro?</Pill>
             <h2 className="fp-title mt-5 text-[34px] md:text-[44px]">Tu tiempo vale más que copiar y pegar</h2>
-            <p className="mt-4 max-w-[480px] text-[15px] leading-relaxed text-[#8d9094]">Menos tareas. Más ideas. Mejor flujo: automatizamos lo repetitivo para que tu equipo se centre en lo importante.</p>
+            <p className="mt-4 max-w-[480px] text-[15px] leading-relaxed text-[#5b6168]">Menos tareas. Más ideas. Mejor flujo: automatizamos lo repetitivo para que tu equipo se centre en lo importante.</p>
             <ul className="mt-9 max-w-[470px] space-y-3.5">
               {[
                 { i: Hourglass, t: "Recupera tiempo" },
                 { i: Link2, t: "Conecta el trabajo" },
                 { i: ShieldCheck, t: "Reduce errores" },
               ].map(({ i: Icono, t }) => (
-                <li key={t} className="flex items-center gap-3 rounded-lg bg-[#0d0e10] px-4 py-3.5 text-[17px] text-[#e8eaec]">
-                  <Icono size={18} className="text-[#9aa0a4]" /> {t}
+                <li key={t} className="flex items-center gap-3 rounded-lg bg-[#f4f6f7] px-4 py-3.5 text-[17px] text-[#14171a]">
+                  <Icono size={18} className="text-[#6b7280]" /> {t}
                 </li>
               ))}
             </ul>
@@ -165,7 +165,7 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── CASOS DE USO ─────────── */}
-      <section id="casos" className="fp-wrap bg-[#040507]">
+      <section id="casos" className="fp-wrap bg-white">
         <Reveal className="px-5 pb-8 pt-20 md:px-9">
           <Pill>Casos de uso</Pill>
           <h2 className="fp-title mt-5 max-w-[700px] text-[34px] md:text-[46px]">FlujoPro automatiza el día a día de tu equipo</h2>
@@ -175,23 +175,23 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── INTEGRACIONES ─────────── */}
-      <section id="integraciones" className="fp-wrap relative overflow-hidden bg-[#040507]">
+      <section id="integraciones" className="fp-wrap relative overflow-hidden bg-white">
         <Cabecera pill="Integraciones" titulo="Conecta FlujoPro con tu forma de trabajar" texto="Conectamos correo, hojas de cálculo, CRM y otras plataformas, sin reemplazar lo que ya usas." />
         <div className="relative px-5 pb-24 md:px-0">
-          <div className="pointer-events-none absolute left-1/2 top-0 hidden h-[560px] w-[1000px] -translate-x-1/2 rounded-full border border-dashed border-white/20 md:block [mask-image:linear-gradient(to_bottom,transparent_0%,black_30%,black_70%,transparent_100%)]" />
+          <div className="pointer-events-none absolute left-1/2 top-0 hidden h-[560px] w-[1000px] -translate-x-1/2 rounded-full border border-dashed border-slate-300/80 md:block [mask-image:linear-gradient(to_bottom,transparent_0%,black_30%,black_70%,transparent_100%)]" />
           <Reveal scale={0.9} y={30} className="relative mx-auto max-w-[760px] opacity-90"><IntegrationsArt /></Reveal>
           <Reveal x={-50} y={0} delay={0.2} className="absolute left-5 top-6 hidden w-[280px] md:left-10 md:block">
             <div className="fp-card p-5">
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1384e0]"><FileText size={16} /></span>
-              <h3 className="mt-4 text-[18px] text-[#e4e6e8]">Tus aplicaciones conectadas</h3>
-              <p className="mt-1.5 text-[13.5px] leading-snug text-[#7f8286]">Correo, hojas de cálculo, CRM y otras plataformas comparten la información necesaria.</p>
+              <h3 className="mt-4 text-[18px] text-[#14171a]">Tus aplicaciones conectadas</h3>
+              <p className="mt-1.5 text-[13.5px] leading-snug text-[#6b7280]">Correo, hojas de cálculo, CRM y otras plataformas comparten la información necesaria.</p>
             </div>
           </Reveal>
           <Reveal x={50} y={0} delay={0.35} className="absolute right-5 top-4 hidden w-[290px] md:right-10 md:block">
             <div className="fp-card p-5">
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#17b890]"><FileText size={16} /></span>
-              <h3 className="mt-4 text-[18px] text-[#e4e6e8]">Avisos en el momento justo</h3>
-              <p className="mt-1.5 text-[13.5px] leading-snug text-[#7f8286]">Solicitudes, validaciones y recordatorios que siguen su recorrido solos.</p>
+              <h3 className="mt-4 text-[18px] text-[#14171a]">Avisos en el momento justo</h3>
+              <p className="mt-1.5 text-[13.5px] leading-snug text-[#6b7280]">Solicitudes, validaciones y recordatorios que siguen su recorrido solos.</p>
             </div>
           </Reveal>
           <div className="relative -mt-6 text-center"><Link href="#agendar" className="fp-btn-mint">Agendar una cita <ArrowUpRight size={16} /></Link></div>
@@ -200,23 +200,23 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── OPINIONES ─────────── */}
-      <section className="fp-wrap bg-[#040507]">
+      <section className="fp-wrap bg-white">
         <Cabecera pill="Opiniones" titulo="Lo que dicen de nosotros en Google" texto="Consulta las opiniones publicadas en la ficha de FlujoPro." />
-        <div className="border-t border-[#16181b] px-4 py-5 md:px-[34px]">
+        <div className="border-t border-[#e9ebee] px-4 py-5 md:px-[34px]">
           <Reveal y={36} className="fp-card relative overflow-hidden px-7 py-12 md:px-[90px]">
-            <p className="text-[24px] font-normal leading-snug tracking-tight text-[#e4e6e8] md:text-[28px]">
+            <p className="text-[24px] font-normal leading-snug tracking-tight text-[#14171a] md:text-[28px]">
               «Que el trabajo avance. Sin perseguirlo.» Menos tareas, más ideas, mejor flujo.
             </p>
             <a href={RESENAS} target="_blank" rel="noopener noreferrer" className="fp-btn-mint mt-8">Ver reseñas en Google <ArrowUpRight size={16} /></a>
           </Reveal>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <Reveal delay={0.1} className="fp-card p-7">
-              <p className="text-[19px] leading-snug text-[#e4e6e8]">Atención 24 horas, 365 días, por WhatsApp y por teléfono.</p>
-              <a href="tel:+34606806376" className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#14171a] px-3.5 py-2 text-[14px] text-white"><Phone size={15} /> +34 606 806 376</a>
+              <p className="text-[19px] leading-snug text-[#14171a]">Atención 24 horas, 365 días, por WhatsApp y por teléfono.</p>
+              <a href="tel:+34606806376" className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#eef1f3] px-3.5 py-2 text-[14px] text-[#14171a]"><Phone size={15} /> +34 606 806 376</a>
             </Reveal>
             <Reveal delay={0.22} className="fp-card p-7">
-              <p className="text-[19px] leading-snug text-[#e4e6e8]">Atendemos en Madrid, de lunes a viernes de 09:30 a 18:00.</p>
-              <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#14171a] px-3.5 py-2 text-[14px] text-white"><Clock size={15} /> Sábados, domingos y festivos: cerrado</span>
+              <p className="text-[19px] leading-snug text-[#14171a]">Atendemos en Madrid, de lunes a viernes de 09:30 a 18:00.</p>
+              <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#eef1f3] px-3.5 py-2 text-[14px] text-[#14171a]"><Clock size={15} /> Sábados, domingos y festivos: cerrado</span>
             </Reveal>
           </div>
         </div>
@@ -224,18 +224,18 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── PREGUNTAS (en el lugar de los precios) ─────────── */}
-      <section id="preguntas" className="fp-wrap bg-[#040507]">
+      <section id="preguntas" className="fp-wrap bg-white">
         <Cabecera pill="Preguntas" titulo="Preguntas frecuentes sobre la automatización de flujos" />
-        <div className="border-t border-[#16181b] px-4 py-6 md:px-[106px]">
+        <div className="border-t border-[#e9ebee] px-4 py-6 md:px-[106px]">
           <div className="space-y-3">
             {FAQ.map((f, i) => (
               <Reveal key={f.q} delay={i * 0.07} y={20}>
-              <details className="fp-card group px-6 py-5 open:bg-[#0e1012]">
+              <details className="fp-card group px-6 py-5 open:bg-[#fafbfc]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-medium text-white">
                   {f.q}
-                  <Plus size={20} className="shrink-0 text-[#84dded] transition group-open:rotate-45" />
+                  <Plus size={20} className="shrink-0 text-[#0e7c8f] transition group-open:rotate-45" />
                 </summary>
-                <p className="mt-3 max-w-[56rem] text-[14.5px] leading-relaxed text-[#8d9094]">{f.a}</p>
+                <p className="mt-3 max-w-[56rem] text-[14.5px] leading-relaxed text-[#5b6168]">{f.a}</p>
               </details>
               </Reveal>
             ))}
@@ -245,11 +245,11 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── AGENDAR ─────────── */}
-      <section id="agendar" className="fp-wrap bg-[#040507]">
+      <section id="agendar" className="fp-wrap bg-white">
         <Cabecera pill="Agendar" titulo="Hablemos de ese proceso que te roba tiempo" texto="¿Cuánto tiempo se pierde en tareas que podrían hacerse solas? Agenda una llamada gratuita de 30 minutos." />
-        <div className="border-t border-[#16181b] px-3 py-6 md:px-[60px]">
+        <div className="border-t border-[#e9ebee] px-3 py-6 md:px-[60px]">
           <Reveal y={40} className="fp-card overflow-hidden p-2 md:p-3"><Reserva /></Reveal>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-[14px] text-[#9a9da1]">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-[14px] text-[#5b6168]">
             <a href={WA} target="_blank" rel="noopener noreferrer" className="fp-btn-dark"><MessageCircle size={16} /> WhatsApp · +34 606 806 376</a>
             <span className="flex items-center gap-2"><Clock size={15} /> Lunes a viernes · 09:30–18:00</span>
           </div>
@@ -258,14 +258,14 @@ export default function Home() {
       <Hatch />
 
       {/* ─────────── UBICACIÓN ─────────── */}
-      <section id="ubicacion" className="fp-wrap bg-[#040507]">
+      <section id="ubicacion" className="fp-wrap bg-white">
         <Cabecera pill="Ubicación" titulo="C. Joaquín María López, 26 · Madrid" texto="Aparcamiento público cercano: C. Blasco de Garay, 61. Sábados, domingos y festivos: cerrado." />
-        <div className="border-t border-[#16181b] px-4 py-6 md:px-[34px]">
-          <Reveal y={40} scale={0.97} className="overflow-hidden rounded-2xl border border-[#1b1d20]">
+        <div className="border-t border-[#e9ebee] px-4 py-6 md:px-[34px]">
+          <Reveal y={40} scale={0.97} className="overflow-hidden rounded-2xl border border-[#e3e6e9]">
             <iframe
               title="Mapa de FlujoPro" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Calle+Joaquín+María+López+26+Madrid&output=embed"
-              className="h-[380px] w-full border-0 [filter:invert(.92)_hue-rotate(180deg)_saturate(.7)_brightness(.9)]"
+              className="h-[380px] w-full border-0"
             />
           </Reveal>
           <div className="mt-4 text-center">
@@ -281,7 +281,7 @@ export default function Home() {
           <Reveal x={-40} y={0}>
             <Pill>Empieza hoy</Pill>
             <h2 className="fp-title mt-5 text-[34px] md:text-[44px]">Deja que tu trabajo fluya solo</h2>
-            <p className="mt-4 max-w-[480px] text-[15px] leading-relaxed text-[#8d9094]">Convertimos las tareas repetitivas en flujos claros, para que tu equipo se centre en lo importante y no en perseguir pasos.</p>
+            <p className="mt-4 max-w-[480px] text-[15px] leading-relaxed text-[#5b6168]">Convertimos las tareas repetitivas en flujos claros, para que tu equipo se centre en lo importante y no en perseguir pasos.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="#agendar" className="fp-btn-mint">Agendar una cita <ArrowUpRight size={16} /></Link>
               <a href={WA} target="_blank" rel="noopener noreferrer" className="fp-btn-dark">WhatsApp</a>

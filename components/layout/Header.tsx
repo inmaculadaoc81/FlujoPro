@@ -38,27 +38,27 @@ export default function Header({ showBlog = false }: { showBlog?: boolean }) {
           marginTop: pill ? 12 : 0,
           height: pill ? 56 : 70,
           borderRadius: pill ? 999 : 0,
-          backgroundColor: pill ? "rgba(10,12,14,0.78)" : "rgba(4,5,7,0.7)",
-          borderColor: pill ? "rgba(255,255,255,0.14)" : "rgba(255,255,255,0)",
-          boxShadow: pill ? "0 14px 44px rgba(0,0,0,0.55)" : "0 0 0 rgba(0,0,0,0)",
+          backgroundColor: pill ? "rgba(255,255,255,0.86)" : "rgba(255,255,255,0.72)",
+          borderColor: pill ? "rgba(15,23,42,0.1)" : "rgba(15,23,42,0)",
+          boxShadow: pill ? "0 14px 44px rgba(15,23,42,0.14)" : "0 0 0 rgba(15,23,42,0)",
         }}
         transition={{ type: "spring", stiffness: 130, damping: 22, mass: 0.9 }}
         style={{ border: "1px solid transparent" }}
       >
-        <motion.span aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-white/[0.07]" animate={{ opacity: pill ? 0 : 1 }} />
+        <motion.span aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-[#e9ebee]" animate={{ opacity: pill ? 0 : 1 }} />
         <div className={`mx-auto flex h-full w-full max-w-[1136px] items-center px-5 transition-[padding] duration-500 ${pill ? "md:px-6" : "md:px-9"}`}>
           <Link href="/" className="flex items-center gap-2.5" onClick={() => setAbierto(false)}>
             <img src="/logo-flujopro.svg" alt="" width={30} height={30} className={`rounded-lg transition-all duration-500 ${pill ? "scale-90" : ""}`} />
-            <span className="text-[18px] font-semibold uppercase tracking-tight text-white">FlujoPro</span>
+            <span className="text-[18px] font-semibold uppercase tracking-tight text-[#0b0d10]">FlujoPro</span>
           </Link>
           <nav className="ml-auto mr-5 hidden items-center gap-6 lg:flex">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="text-[14px] font-medium text-[#e4e6e8] transition hover:text-[#b5fffc]">{l.label}</Link>
+              <Link key={l.href} href={l.href} className="text-[14px] font-medium text-[#3a4148] transition hover:text-[#0e7c8f]">{l.label}</Link>
             ))}
           </nav>
-          <Link href="/#agendar" className={`fp-btn-dark ml-auto hidden !py-2 !text-[13.5px] lg:ml-0 lg:inline-flex ${pill ? "!rounded-full" : ""}`}>Agendar cita</Link>
+          <Link href="/#agendar" className={`fp-btn-mint ml-auto hidden !py-2 !text-[13.5px] lg:ml-0 lg:inline-flex ${pill ? "!rounded-full" : ""}`}>Agendar cita</Link>
           <button className="ml-auto lg:hidden" aria-label="Menú" onClick={() => setAbierto((v) => !v)}>
-            {abierto ? <X size={26} color="#fff" /> : <Menu size={26} color="#fff" />}
+            {abierto ? <X size={26} color="#0b0d10" /> : <Menu size={26} color="#0b0d10" />}
           </button>
         </div>
 
@@ -69,10 +69,10 @@ export default function Header({ showBlog = false }: { showBlog?: boolean }) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.98 }}
               transition={{ duration: 0.22 }}
-              className="absolute inset-x-0 top-full mt-2 overflow-hidden rounded-2xl border border-white/10 bg-[#07090b]/95 px-5 pb-6 pt-2 backdrop-blur-xl lg:hidden"
+              className="absolute inset-x-0 top-full mt-2 overflow-hidden rounded-2xl border border-[#e3e6e9] bg-white/95 px-5 pb-6 pt-2 shadow-xl backdrop-blur-xl lg:hidden"
             >
               {links.map((l) => (
-                <Link key={l.href} href={l.href} onClick={() => setAbierto(false)} className="block border-b border-white/[0.07] py-3.5 text-base text-white">{l.label}</Link>
+                <Link key={l.href} href={l.href} onClick={() => setAbierto(false)} className="block border-b border-[#eef0f2] py-3.5 text-base text-[#0b0d10]">{l.label}</Link>
               ))}
               <Link href="/#agendar" onClick={() => setAbierto(false)} className="fp-btn-mint mt-5 w-full justify-center">Agendar cita</Link>
             </motion.div>
