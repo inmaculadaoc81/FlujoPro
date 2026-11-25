@@ -3,9 +3,10 @@ import type { ReactNode } from "react";
 import { ArrowUpRight, FileText, Link2, Hourglass, ShieldCheck, Plus, MapPin, Clock, Phone, MessageCircle } from "lucide-react";
 import Reserva from "@/components/Reserva";
 import UseCases from "@/components/UseCases";
+import { StepUnderstand, StepDesign, StepRun } from "@/components/iso/Steps";
 import { Reveal, Parallax, HatchBand } from "@/components/anim/Reveal";
 import {
-  HeroArt, StepArt1, StepArt2, StepArt3, FeatArtBig, FeatArtLink, FeatArtMemory, FeatArtShield, FeatArtCube, FeatArtBars,
+  HeroArt, FeatArtBig, FeatArtLink, FeatArtMemory, FeatArtShield, FeatArtCube, FeatArtBars,
   SecurityArt, IntegrationsArt, CtaArt,
 } from "@/components/iso/Iso";
 
@@ -15,9 +16,9 @@ const RESENAS = "https://maps.app.goo.gl/NbdVhk4eLpygfeV88";
 const HERRAMIENTAS = ["Correo", "Hojas de cálculo", "WhatsApp", "CRM", "Formularios", "Documentos", "Calendario"];
 
 const PASOS: { n: string; t: string; d: string; art: ReactNode }[] = [
-  { n: "1", t: "Entendemos tu proceso", d: "Nos cuentas qué tarea se repite y dónde se pierde tiempo; analizamos cómo trabajáis de verdad.", art: <StepArt1 /> },
-  { n: "2", t: "Diseñamos el flujo", d: "Definimos pasos, conexiones y responsables para que cada tarea llegue a quien corresponde.", art: <StepArt2 /> },
-  { n: "3", t: "Lo ponemos en marcha", d: "Configuramos y comprobamos el recorrido completo. Tu equipo gana tiempo desde el primer día.", art: <StepArt3 /> },
+  { n: "1", t: "Entendemos tu proceso", d: "Nos cuentas qué tarea se repite y dónde se pierde tiempo; analizamos cómo trabajáis de verdad.", art: <StepUnderstand /> },
+  { n: "2", t: "Diseñamos el flujo", d: "Definimos pasos, conexiones y responsables para que cada tarea llegue a quien corresponde.", art: <StepDesign /> },
+  { n: "3", t: "Lo ponemos en marcha", d: "Configuramos y comprobamos el recorrido completo. Tu equipo gana tiempo desde el primer día.", art: <StepRun /> },
 ];
 
 const FAQ = [
@@ -105,7 +106,7 @@ export default function Home() {
           {PASOS.map((p, i) => (
             <Reveal key={p.n} delay={i * 0.14} y={40} className={`border-[#e9ebee] ${i < 2 ? "md:border-r" : ""}`}>
               <div className="fp-mono border-b border-[#e9ebee] bg-[#f6f8f9] px-6 py-4 text-[17px] text-[#0e7c8f]">PASO {p.n}</div>
-              <div className="flex h-[270px] items-center justify-center px-6 pt-2">{p.art}</div>
+              <div className="flex h-[300px] items-center justify-center px-2 pt-2">{p.art}</div>
               <div className="px-6 pb-10 pt-3">
                 <h3 className="text-[22px] font-medium tracking-tight">{p.t}</h3>
                 <p className="mt-3 text-[14.5px] leading-snug text-[#5b6168]">{p.d}</p>

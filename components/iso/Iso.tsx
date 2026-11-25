@@ -4,12 +4,12 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-const C = 0.866;
-const S = 0.5;
+export const C = 0.866;
+export const S = 0.5;
 type P = [number, number];
-const pts = (a: P[]) => a.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ");
-const proj = (cx: number, cy: number) => (x: number, y: number, z = 0): P => [cx + (x - y) * C, cy + (x + y) * S - z];
-const planeM = (tx: number, ty: number) => `matrix(${C} ${S} ${-C} ${S} ${tx} ${ty})`; // suelo
+export const pts = (a: P[]) => a.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ");
+export const proj = (cx: number, cy: number) => (x: number, y: number, z = 0): P => [cx + (x - y) * C, cy + (x + y) * S - z];
+export const planeM = (tx: number, ty: number) => `matrix(${C} ${S} ${-C} ${S} ${tx} ${ty})`; // suelo
 const wallM = (tx: number, ty: number) => `matrix(${-C} ${S} 0 -1 ${tx} ${ty})`; // pared (plano x = cte)
 
 /* ───────── degradados ───────── */
@@ -21,8 +21,10 @@ const TONES: Record<string, [string, string, string, string, string, string]> = 
   amber: ["#fde68a", "#f59e0b", "#fbbf24", "#b45309", "#fcd34d", "#d97706"],
   rose: ["#fda4af", "#e11d48", "#fb7185", "#9f1239", "#fb7185", "#be123c"],
   green: ["#86efac", "#16a34a", "#4ade80", "#166534", "#34d399", "#15803d"],
+  paper: ["#ffffff", "#eef2f7", "#d5dde7", "#bcc7d4", "#e3e9f0", "#cbd5e1"],
+  plano: ["#f5f7ff", "#e0e7ff", "#c7d2fe", "#a5b4fc", "#dbe1ff", "#b4bffb"],
 };
-function Defs({ id }: { id: string }) {
+export function Defs({ id }: { id: string }) {
   return (
     <defs>
       {Object.entries(TONES).map(([k, c]) => (
@@ -80,10 +82,10 @@ function Packet({ d, dur = 4, delay = 0, color = "#7df7ea" }: { d: string; dur?:
   );
 }
 
-type Tone = "teal" | "dark" | "glass" | "blue" | "violet" | "amber" | "rose" | "green";
+type Tone = "teal" | "dark" | "glass" | "blue" | "violet" | "amber" | "rose" | "green" | "paper" | "plano";
 
 /* ───────── caja isométrica ───────── */
-function Slab({ id, cx, cy, w, d, h, tone = "teal", opacity = 1, children, edge }: {
+export function Slab({ id, cx, cy, w, d, h, tone = "teal", opacity = 1, children, edge }: {
   id: string; cx: number; cy: number; w: number; d: number; h: number; tone?: Tone; opacity?: number; children?: ReactNode; edge?: string;
 }) {
   const p = proj(cx, cy);
@@ -91,7 +93,7 @@ function Slab({ id, cx, cy, w, d, h, tone = "teal", opacity = 1, children, edge 
   const left = [p(0, d, 0), p(w, d, 0), p(w, d, h), p(0, d, h)];
   const right = [p(w, 0, 0), p(w, d, 0), p(w, d, h), p(w, 0, h)];
   const [tx, ty] = p(w / 2, d / 2, h);
-  const stroke = edge ?? (tone === "dark" ? "rgba(94,234,212,.30)" : tone === "glass" ? "rgba(100,116,139,.55)" : "rgba(255,255,255,.45)");
+  const stroke = edge ?? (tone === "paper" ? "rgba(100,116,139,.55)" : tone === "dark" ? "rgba(94,234,212,.30)" : tone === "glass" ? "rgba(100,116,139,.55)" : "rgba(255,255,255,.45)");
   return (
     <g opacity={opacity}>
       <polygon points={pts(left)} fill={`url(#${id}-${tone}-left)`} stroke={stroke} strokeWidth="1" strokeLinejoin="round" />
