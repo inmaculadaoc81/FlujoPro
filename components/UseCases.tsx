@@ -22,20 +22,20 @@ export default function UseCases() {
   const { Flujo } = caso;
   return (
     <div>
-      <div role="tablist" className="fp-card mx-auto mb-5 flex w-fit max-w-full flex-wrap justify-center gap-1 !rounded-full p-1.5">
+      <div role="tablist" className="fp-card mx-auto mb-5 flex w-fit max-w-full flex-wrap justify-center gap-1 p-1.5">
         {CASOS.map((c) => (
           <button
             key={c.id} role="tab" aria-selected={c.id === activo} onClick={() => setActivo(c.id)}
-            className={`relative rounded-full px-4 py-2.5 text-[13.5px] font-semibold transition-colors ${c.id === activo ? "text-white" : "text-[#7c776a] hover:text-[#2a2618]"}`}
+            className={`relative rounded-lg px-4 py-2.5 text-[13.5px] font-semibold transition-colors ${c.id === activo ? "text-white" : "text-[#7c776a] hover:text-[#2a2618]"}`}
           >
-            {c.id === activo && <motion.span layoutId="fp-tab" className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f4a51f] to-[#e4481c] shadow-[0_8px_18px_rgba(232,89,29,0.3)]" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
+            {c.id === activo && <motion.span layoutId="fp-tab" className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#f4a51f] to-[#e4481c] shadow-[0_8px_18px_rgba(232,89,29,0.3)]" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
             <span className="relative">{c.etiqueta}</span>
           </button>
         ))}
       </div>
       <div>
-        <div className="fp-frame relative overflow-hidden rounded-[30px] p-3 md:p-8">
-          <div className="fp-window px-3 pt-6 pb-24 md:px-10">
+        <div className="fp-panel px-3 pt-6 pb-4 md:px-10 md:pt-8">
+          <div>
             <AnimatePresence mode="wait">
               <motion.div key={caso.id} initial={{ opacity: 0, y: 14, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -10, scale: 0.98 }} transition={{ duration: 0.35 }}>
                 <p className="mb-2 text-center text-[15px] font-semibold tracking-tight text-[#2a2618] md:text-[17px]">{caso.titulo}</p>
@@ -43,7 +43,7 @@ export default function UseCases() {
               </motion.div>
             </AnimatePresence>
           </div>
-          <div className="relative -mt-20 grid gap-3 px-1 md:mx-auto md:max-w-[640px] md:grid-cols-3 md:px-0">
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
             {DATOS.map((d) => (
               <div key={d.t} className="fp-card p-5">
                 <p className="text-[17px] font-medium text-[#2a2618]">{d.t}</p>

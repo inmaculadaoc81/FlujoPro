@@ -102,7 +102,7 @@ export default function Home() {
             <Reveal scale={0.95} y={50} delay={0.4} amount={0.05}>
               <div className="fp-panel p-3 sm:p-8">
                 <div className="fp-window">
-                  <div className="flex items-center gap-1.5 border-b border-white/70 px-4 py-3">
+                  <div className="flex items-center gap-1.5 px-4 pt-3">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#ee6a52]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#efc05a]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#80b461]" />
@@ -208,7 +208,7 @@ export default function Home() {
                 <p className="mt-4 text-[12.5px] text-[#7c776a]">Aparcamiento público cercano: C. Blasco de Garay, 61.</p>
               </div>
               <div className="fp-card min-h-[300px] flex-1 overflow-hidden p-2">
-                <iframe title="Mapa de FlujoPro" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Calle+Joaquín+María+López+26+Madrid&output=embed" className="h-full min-h-[285px] w-full rounded-2xl border-0" />
+                <iframe title="Mapa de FlujoPro" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Calle+Joaquín+María+López+26+Madrid&output=embed" className="h-full min-h-[285px] w-full rounded-lg border-0" />
               </div>
             </div>
             <div className="fp-card overflow-hidden p-2"><Reserva /></div>

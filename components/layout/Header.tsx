@@ -59,19 +59,19 @@ export default function Header({ showBlog = false }: { showBlog?: boolean }) {
           </Link>
           <nav className="mx-auto hidden items-center gap-0.5 lg:flex" onMouseLeave={() => setEncima(null)}>
             {links.map((l) => (
-              <Link key={l.href} href={l.href} onMouseEnter={() => setEncima(l.id)} className={`relative rounded-full px-3.5 py-2 text-[13.5px] font-medium transition-colors ${marcada === l.id ? "text-[#2a2618]" : "text-[#6f6a5c] hover:text-[#2a2618]"}`}>
-                {marcada === l.id && <motion.span layoutId="fp-nav" className="absolute inset-0 rounded-full bg-white shadow-[0_2px_10px_rgba(70,55,20,0.1)]" transition={{ type: "spring", stiffness: 420, damping: 34 }} />}
+              <Link key={l.href} href={l.href} onMouseEnter={() => setEncima(l.id)} className={`relative rounded-lg px-3.5 py-2 text-[13.5px] font-medium transition-colors ${marcada === l.id ? "text-[#2a2618]" : "text-[#6f6a5c] hover:text-[#2a2618]"}`}>
+                {marcada === l.id && <motion.span layoutId="fp-nav" className="absolute inset-0 rounded-lg bg-white shadow-[0_2px_10px_rgba(70,55,20,0.1)]" transition={{ type: "spring", stiffness: 420, damping: 34 }} />}
                 <span className="relative">{l.label}</span>
               </Link>
             ))}
           </nav>
           {/* el envoltorio es el que oculta el botón en móvil (la clase del botón fija su propio display) */}
           <span className="ml-auto hidden lg:ml-0 lg:block">
-            <Link href="/#agendar" className="fp-btn-grad group !rounded-full !py-2.5 !text-[13.5px]">
+            <Link href="/#agendar" className="fp-btn-grad group !py-2.5 !text-[13.5px]">
               Agendar cita <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </span>
-          <button className="ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/70 lg:hidden" aria-label="Menú" onClick={() => setAbierto((v) => !v)}>
+          <button className="ml-auto flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 lg:hidden" aria-label="Menú" onClick={() => setAbierto((v) => !v)}>
             {abierto ? <X size={22} color="#2a2618" /> : <Menu size={22} color="#2a2618" />}
           </button>
         </div>
@@ -84,12 +84,12 @@ export default function Header({ showBlog = false }: { showBlog?: boolean }) {
           {abierto && (
             <motion.div
               initial={{ opacity: 0, y: -8, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -8, scale: 0.98 }} transition={{ duration: 0.22 }}
-              className="absolute inset-x-0 top-full mt-2 overflow-hidden rounded-3xl border border-white/70 bg-[#fbf9f3]/95 px-5 pt-1 pb-5 shadow-2xl backdrop-blur-xl lg:hidden"
+              className="absolute inset-x-0 top-full mt-2 overflow-hidden rounded-[10px] bg-[#fbf9f3]/95 px-5 pt-1 pb-5 shadow-2xl backdrop-blur-xl lg:hidden"
             >
               {links.map((l) => (
-                <Link key={l.href} href={l.href} onClick={() => setAbierto(false)} className="block border-b border-[#efeadd] py-3.5 text-base text-[#2a2618]">{l.label}</Link>
+                <Link key={l.href} href={l.href} onClick={() => setAbierto(false)} className="block py-3.5 text-base text-[#2a2618]">{l.label}</Link>
               ))}
-              <Link href="/#agendar" onClick={() => setAbierto(false)} className="fp-btn-grad mt-4 w-full justify-center !rounded-full">Agendar cita</Link>
+              <Link href="/#agendar" onClick={() => setAbierto(false)} className="fp-btn-grad mt-4 w-full justify-center">Agendar cita</Link>
             </motion.div>
           )}
         </AnimatePresence>
