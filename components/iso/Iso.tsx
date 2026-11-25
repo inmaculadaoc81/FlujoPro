@@ -15,14 +15,14 @@ const wallM = (tx: number, ty: number) => `matrix(${-C} ${S} 0 -1 ${tx} ${ty})`;
 /* ───────── degradados ───────── */
 const TONES: Record<string, [string, string, string, string, string, string]> = {
   // [cara superior 1, 2, lado izquierdo 1, 2, lado derecho 1, 2]
-  teal: ["#6ef2c6", "#2f93f0", "#23a9c9", "#1458b8", "#2cc9a2", "#1c6ec6"],
-  blue: ["#3ab0ff", "#1676f0", "#2a8fe0", "#154fa8", "#2f9cf0", "#1a5bc0"],
-  violet: ["#c4b5fd", "#7c3aed", "#8b5cf6", "#4c1d95", "#a78bfa", "#5b21b6"],
-  amber: ["#fde68a", "#f59e0b", "#fbbf24", "#b45309", "#fcd34d", "#d97706"],
-  rose: ["#fda4af", "#e11d48", "#fb7185", "#9f1239", "#fb7185", "#be123c"],
-  green: ["#86efac", "#16a34a", "#4ade80", "#166534", "#34d399", "#15803d"],
-  paper: ["#ffffff", "#eef2f7", "#d5dde7", "#bcc7d4", "#e3e9f0", "#cbd5e1"],
-  plano: ["#f5f7ff", "#e0e7ff", "#c7d2fe", "#a5b4fc", "#dbe1ff", "#b4bffb"],
+  teal: ["#d3dfb4", "#869c55", "#a1b673", "#5c7036", "#95ab64", "#6b8042"],
+  blue: ["#b7ae96", "#676049", "#827a60", "#403a2a", "#756d54", "#4f4833"],
+  violet: ["#fdbb78", "#e8531d", "#fb8a3c", "#9a3412", "#f5701f", "#c2440f"],
+  amber: ["#fdeab4", "#e2a63a", "#efc05a", "#a5711b", "#e9b54e", "#bb8324"],
+  rose: ["#fbbcae", "#dc513c", "#ee7c66", "#a3301f", "#e96b54", "#bd3e2a"],
+  green: ["#c2e0a6", "#5f9843", "#80b461", "#3f6c2a", "#72a753", "#4d7f35"],
+  paper: ["#ffffff", "#f6f2e8", "#e4ddcb", "#cfc6ae", "#ece6d6", "#dcd3bd"],
+  plano: ["#fffdf7", "#f5ecd8", "#e8dcc0", "#d5c49e", "#efe5cd", "#decfab"],
 };
 export function Defs({ id }: { id: string }) {
   return (
@@ -36,13 +36,13 @@ export function Defs({ id }: { id: string }) {
         </g>
       ))}
       <linearGradient id={`${id}-card`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#6ef2c6" stopOpacity=".95" /><stop offset="1" stopColor="#2a86e8" stopOpacity=".85" /></linearGradient>
-      <linearGradient id={`${id}-dark-top`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#2c3238" /><stop offset="1" stopColor="#14171a" /></linearGradient>
-      <linearGradient id={`${id}-dark-left`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1b2025" /><stop offset="1" stopColor="#0d0f11" /></linearGradient>
-      <linearGradient id={`${id}-dark-right`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#22282d" /><stop offset="1" stopColor="#101214" /></linearGradient>
-      <linearGradient id={`${id}-glass-top`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#94a3b8" stopOpacity=".34" /><stop offset="1" stopColor="#818cf8" stopOpacity=".12" /></linearGradient>
-      <linearGradient id={`${id}-glass-left`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#94a3b8" stopOpacity=".26" /><stop offset="1" stopColor="#94a3b8" stopOpacity=".08" /></linearGradient>
-      <linearGradient id={`${id}-glass-right`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#94a3b8" stopOpacity=".3" /><stop offset="1" stopColor="#94a3b8" stopOpacity=".08" /></linearGradient>
-      <linearGradient id={`${id}-beam`} x1="0" y1="1" x2="0" y2="0"><stop offset="0" stopColor="#14b8a6" stopOpacity=".38" /><stop offset="1" stopColor="#14b8a6" stopOpacity="0" /></linearGradient>
+      <linearGradient id={`${id}-dark-top`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#443e2d" /><stop offset="1" stopColor="#221f15" /></linearGradient>
+      <linearGradient id={`${id}-dark-left`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2c281b" /><stop offset="1" stopColor="#17150e" /></linearGradient>
+      <linearGradient id={`${id}-dark-right`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#363123" /><stop offset="1" stopColor="#1d1a11" /></linearGradient>
+      <linearGradient id={`${id}-glass-top`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#a8a08a" stopOpacity=".34" /><stop offset="1" stopColor="#fbbf6b" stopOpacity=".12" /></linearGradient>
+      <linearGradient id={`${id}-glass-left`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#a8a08a" stopOpacity=".26" /><stop offset="1" stopColor="#a8a08a" stopOpacity=".08" /></linearGradient>
+      <linearGradient id={`${id}-glass-right`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#a8a08a" stopOpacity=".3" /><stop offset="1" stopColor="#a8a08a" stopOpacity=".08" /></linearGradient>
+      <linearGradient id={`${id}-beam`} x1="0" y1="1" x2="0" y2="0"><stop offset="0" stopColor="#f59e3b" stopOpacity=".38" /><stop offset="1" stopColor="#f59e3b" stopOpacity="0" /></linearGradient>
       <filter id={`${id}-blur`} x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14" /></filter>
       <filter id={`${id}-soft`} x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" /></filter>
     </defs>
@@ -69,11 +69,11 @@ function Glow({ children, from = 0.5, dur = 3, delay = 0 }: { children: ReactNod
 }
 const polyD = (s: string) => "M" + s.trim().split(/\s+/).join(" L");
 // Línea de puntos por la que «circula» el flujo.
-export function Wire({ d, color = "rgba(94,234,212,.55)", dash = "4 7", w = 1, speed = 1.6 }: { d: string; color?: string; dash?: string; w?: number; speed?: number }) {
+export function Wire({ d, color = "rgba(251,191,107,.55)", dash = "4 7", w = 1, speed = 1.6 }: { d: string; color?: string; dash?: string; w?: number; speed?: number }) {
   return <path d={d} fill="none" stroke={color} strokeWidth={w} strokeDasharray={dash} className="fp-dashflow" style={{ animationDuration: `${speed}s` }} />;
 }
 // Punto luminoso que recorre una línea.
-export function Packet({ d, dur = 4, delay = 0, color = "#7df7ea" }: { d: string; dur?: number; delay?: number; color?: string }) {
+export function Packet({ d, dur = 4, delay = 0, color = "#ffd9a0" }: { d: string; dur?: number; delay?: number; color?: string }) {
   return (
     <g>
       <circle r="6" fill={color} opacity=".25"><animateMotion dur={`${dur}s`} begin={`${delay}s`} repeatCount="indefinite" path={d} /></circle>
@@ -93,7 +93,7 @@ export function Slab({ id, cx, cy, w, d, h, tone = "teal", opacity = 1, children
   const left = [p(0, d, 0), p(w, d, 0), p(w, d, h), p(0, d, h)];
   const right = [p(w, 0, 0), p(w, d, 0), p(w, d, h), p(w, 0, h)];
   const [tx, ty] = p(w / 2, d / 2, h);
-  const stroke = edge ?? (tone === "paper" ? "rgba(100,116,139,.55)" : tone === "dark" ? "rgba(94,234,212,.30)" : tone === "glass" ? "rgba(100,116,139,.55)" : "rgba(255,255,255,.45)");
+  const stroke = edge ?? (tone === "paper" ? "rgba(130,118,88,.55)" : tone === "dark" ? "rgba(251,191,107,.30)" : tone === "glass" ? "rgba(130,118,88,.55)" : "rgba(255,255,255,.45)");
   return (
     <g opacity={opacity}>
       <polygon points={pts(left)} fill={`url(#${id}-${tone}-left)`} stroke={stroke} strokeWidth="1" strokeLinejoin="round" />
@@ -158,7 +158,7 @@ function GBell({ c = "#eafffb", w = 3 }: { c?: string; w?: number }) {
 }
 
 /* ───────── pieza de menor tamaño con LEDs ───────── */
-function Leds({ cx, cy, w, d, n = 6, c = "#5eead4" }: { cx: number; cy: number; w: number; d: number; n?: number; c?: string }) {
+function Leds({ cx, cy, w, d, n = 6, c = "#fbbf6b" }: { cx: number; cy: number; w: number; d: number; n?: number; c?: string }) {
   const p = proj(cx, cy);
   return (
     <g>
@@ -181,9 +181,9 @@ export function HeroArt() {
       {/* líneas de conexión */}
       <Wire d={polyD("150,470 300,470 372,428 262,360 345,300")} color="rgba(245,158,11,.75)" />
       <Wire d={polyD("640,262 730,300 880,335 700,455 560,432")} color="rgba(139,92,246,.7)" />
-      <Wire d={polyD("610,205 700,160 905,262")} color="rgba(20,184,166,.7)" />
+      <Wire d={polyD("610,205 700,160 905,262")} color="rgba(134,156,85,.7)" />
       <Packet d={polyD("150,470 300,470 372,428 262,360 345,300")} dur={5} color="#f59e0b" />
-      <Packet d={polyD("640,262 730,300 880,335 700,455 560,432")} dur={6} delay={1.5} color="#8b5cf6" />
+      <Packet d={polyD("640,262 730,300 880,335 700,455 560,432")} dur={6} delay={1.5} color="#f97316" />
       <Packet d={polyD("610,205 700,160 905,262")} dur={4} delay={0.8} />
       {/* piezas pequeñas */}
       <Float dy={7} dur={6} delay={0.4}><Slab id={id} cx={235} cy={375} w={110} d={110} h={26} tone="dark">
@@ -193,20 +193,20 @@ export function HeroArt() {
       <Float dy={6} dur={7} delay={0.9}><Slab id={id} cx={800} cy={215} w={110} d={110} h={26} tone="dark">
         <circle r="32" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.18)" /><g transform="scale(.7)"><GClock c="#9aa3a6" /></g>
       </Slab>
-      <Leds cx={800} cy={215} w={110} d={110} c="#a78bfa" /></Float>
+      <Leds cx={800} cy={215} w={110} d={110} c="#fdba74" /></Float>
       <Float dy={5} dur={8} delay={1.4}><Slab id={id} cx={925} cy={395} w={110} d={110} h={24} tone="dark" opacity={0.45}><circle r="30" fill="none" stroke="rgba(255,255,255,.15)" /></Slab></Float>
       <Float dy={5} dur={7.5} delay={0.2}><Slab id={id} cx={125} cy={440} w={100} d={100} h={22} tone="dark" opacity={0.35}><circle r="28" fill="none" stroke="rgba(255,255,255,.15)" /></Slab></Float>
       {/* pieza central */}
       <Float dy={5} dur={7}><Slab id={id} cx={500} cy={180} w={230} d={230} h={70} tone="dark">
-        <motion.circle r="92" fill="rgba(94,234,212,.07)" stroke="#5eead4" strokeWidth="1.4" animate={{ strokeOpacity: [0.4, 1, 0.4] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
-        <circle r="78" fill="none" stroke="rgba(94,234,212,.25)" />
-        <g transform="scale(2.1)" filter={`url(#${id}-soft)`} opacity=".55"><GFlow c="#5eead4" w={3.5} /></g>
-        <g transform="scale(2.1)"><GFlow c="#7df7ea" w={3.5} /></g>
+        <motion.circle r="92" fill="rgba(251,191,107,.07)" stroke="#fbbf6b" strokeWidth="1.4" animate={{ strokeOpacity: [0.4, 1, 0.4] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
+        <circle r="78" fill="none" stroke="rgba(251,191,107,.25)" />
+        <g transform="scale(2.1)" filter={`url(#${id}-soft)`} opacity=".55"><GFlow c="#fbbf6b" w={3.5} /></g>
+        <g transform="scale(2.1)"><GFlow c="#ffd9a0" w={3.5} /></g>
       </Slab></Float>
       {/* documento */}
       <Float dy={6} dur={6.5} delay={1.2}><g transform={planeM(690, 478)}>
-        <rect x="-62" y="-40" width="124" height="80" rx="6" fill="#ffffff" stroke="rgba(71,85,105,.4)" />
-        <g strokeWidth="5" strokeLinecap="round"><path d="M-40 -16 H40" stroke="#14b8a6" /><path d="M-40 0 H34" stroke="rgba(71,85,105,.4)" /><path d="M-40 16 H12" stroke="rgba(71,85,105,.4)" /></g>
+        <rect x="-62" y="-40" width="124" height="80" rx="6" fill="#ffffff" stroke="rgba(110,100,74,.4)" />
+        <g strokeWidth="5" strokeLinecap="round"><path d="M-40 -16 H40" stroke="#f59e3b" /><path d="M-40 0 H34" stroke="rgba(110,100,74,.4)" /><path d="M-40 16 H12" stroke="rgba(110,100,74,.4)" /></g>
       </g></Float>
     </svg>
   );
@@ -223,7 +223,7 @@ export function StepArt1() {
   return (
     <svg viewBox="0 0 380 300" className="h-auto w-full" role="img" aria-label="Entendemos tu proceso">
       <Defs id={id} />
-      <g stroke="rgba(71,85,105,.28)" fill="none">
+      <g stroke="rgba(110,100,74,.28)" fill="none">
         <polyline points="30,200 190,290 350,200" /><polyline points="60,175 190,250 320,175" />
       </g>
       <Slab id={id} cx={190} cy={165} w={130} d={130} h={14} tone="dark" />
@@ -238,9 +238,9 @@ export function StepArt2() {
   return (
     <svg viewBox="0 0 380 300" className="h-auto w-full" role="img" aria-label="Diseñamos el flujo">
       <Defs id={id} />
-      <Wire d={polyD("135,120 190,150 250,118")} color="rgba(124,58,237,.65)" />
-      <Wire d={polyD("135,120 105,138")} color="rgba(124,58,237,.65)" />
-      <Packet d={polyD("105,138 135,120 190,150 250,118")} dur={3.6} color="#7c3aed" />
+      <Wire d={polyD("135,120 190,150 250,118")} color="rgba(232,89,29,.65)" />
+      <Wire d={polyD("135,120 105,138")} color="rgba(232,89,29,.65)" />
+      <Packet d={polyD("105,138 135,120 190,150 250,118")} dur={3.6} color="#e8591d" />
       <Float dy={5} dur={5.2} delay={0.2}><g transform={planeM(110, 128)} opacity=".95">
         <rect x="-44" y="-30" width="88" height="60" rx="5" fill="#15181b" stroke="rgba(255,255,255,.18)" />
         <g stroke="rgba(255,255,255,.28)" strokeWidth="4" strokeLinecap="round"><path d="M-28 -12 H28" /><path d="M-28 0 H20" /><path d="M-28 12 H4" /></g>
@@ -258,7 +258,7 @@ export function StepArt3() {
   const wire = (cx: number, cy: number, w: number, d: number, h: number) => {
     const p = proj(cx, cy);
     return (
-      <g fill="none" stroke="rgba(71,85,105,0.60)" strokeDasharray="3 4">
+      <g fill="none" stroke="rgba(110,100,74,0.60)" strokeDasharray="3 4">
         <polygon points={pts([p(0, 0, h), p(w, 0, h), p(w, d, h), p(0, d, h)])} />
         <polyline points={pts([p(0, d, 0), p(w, d, 0), p(w, 0, 0)])} />
         <polyline points={pts([p(0, d, h), p(0, d, 0)])} /><polyline points={pts([p(w, d, h), p(w, d, 0)])} /><polyline points={pts([p(w, 0, h), p(w, 0, 0)])} />
@@ -290,8 +290,8 @@ export function FeatArtBig() {
   return (
     <svg viewBox="0 0 380 560" className="h-auto w-full" role="img" aria-label="Flujos que conectan pasos">
       <Defs id={id} />
-      <g fill="none" stroke="rgba(71,85,105,0.66)" strokeDasharray="2 5" className="fp-dashflow"><line x1="86" y1="272" x2="86" y2="360" /><line x1="190" y1="170" x2="190" y2="335" /><line x1="296" y1="266" x2="296" y2="370" /></g>
-      <Glow from={0.15} dur={2.2}><g fill="#35b8ff"><rect x="242" y="108" width="5" height="5" /><rect x="64" y="176" width="5" height="5" /><rect x="52" y="496" width="5" height="5" /></g></Glow>
+      <g fill="none" stroke="rgba(110,100,74,0.66)" strokeDasharray="2 5" className="fp-dashflow"><line x1="86" y1="272" x2="86" y2="360" /><line x1="190" y1="170" x2="190" y2="335" /><line x1="296" y1="266" x2="296" y2="370" /></g>
+      <Glow from={0.15} dur={2.2}><g fill="#e2a63a"><rect x="242" y="108" width="5" height="5" /><rect x="64" y="176" width="5" height="5" /><rect x="52" y="496" width="5" height="5" /></g></Glow>
       <Float dy={8} dur={6}>{stack(60, 222, <g transform="scale(1.1)"><GDoc c="#4c0519" /></g>, "rose")}</Float>
       <Float dy={9} dur={6.6} delay={1.2}>{stack(235, 216, <g transform="scale(1.1)"><GClock c="#4a2a00" /></g>, "amber")}</Float>
       {[110, 178, 246].map((y, i) => (
@@ -301,7 +301,7 @@ export function FeatArtBig() {
         <motion.circle r="64" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.25)" animate={{ fillOpacity: [0.5, 1, 0.5] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} /><g transform="scale(1.5)"><GFlow c="#eafffb" w={3} /></g>
       </Slab>
       
-      <circle cx={p(95, 0, 20)[0]} cy={p(95, 0, 20)[1]} r="2.6" fill="#7df7ea" />
+      <circle cx={p(95, 0, 20)[0]} cy={p(95, 0, 20)[1]} r="2.6" fill="#ffd9a0" />
     </svg>
   );
 }
@@ -310,7 +310,7 @@ export function FeatArtLink() {
   return (
     <svg viewBox="0 0 380 270" className="h-auto w-full" role="img" aria-label="Aplicaciones conectadas">
       <Defs id={id} />
-      <g fill="none" stroke="rgba(71,85,105,0.85)" strokeDasharray="3 5" className="fp-dashflow"><path d="M62 150 C 60 50 150 25 195 60" /><path d="M200 58 C 270 20 328 70 320 155" /><path d="M276 100 C 290 140 290 170 288 195" /></g>
+      <g fill="none" stroke="rgba(110,100,74,0.85)" strokeDasharray="3 5" className="fp-dashflow"><path d="M62 150 C 60 50 150 25 195 60" /><path d="M200 58 C 270 20 328 70 320 155" /><path d="M276 100 C 290 140 290 170 288 195" /></g>
       <Slab id={id} cx={190} cy={150} w={116} d={116} h={22} tone="blue">
         {[-30, 0, 30].map((u) => [-30, 0, 30].map((v) => <rect key={`${u}${v}`} x={u - 7} y={v - 7} width="14" height="14" rx="3" fill="rgba(0,40,60,.35)" />))}
       </Slab>
@@ -342,7 +342,7 @@ export function FeatArtMemory() {
         <g key={y}>
           <rect x="54" y={y - 18} width="36" height="36" rx="10" fill={i ? "#fb7185" : "#10b981"} />
           <g transform={`translate(72 ${y}) scale(.5)`}>{i ? <GDoc c="#06231f" /> : <GCheck c="#06231f" />}</g>
-          <line x1="102" y1={y} x2="148" y2={y} stroke="rgba(71,85,105,0.80)" strokeDasharray="3 5" className="fp-dashflow" /><circle cx="150" cy={y} r="3" fill="#aeb4b8" />
+          <line x1="102" y1={y} x2="148" y2={y} stroke="rgba(110,100,74,0.80)" strokeDasharray="3 5" className="fp-dashflow" /><circle cx="150" cy={y} r="3" fill="#aeb4b8" />
         </g>
       ))}
     </svg>
@@ -353,13 +353,13 @@ export function FeatArtShield() {
   return (
     <svg viewBox="0 0 380 270" className="h-auto w-full" role="img" aria-label="Pasos controlados">
       <Defs id={id} />
-      <g stroke="rgba(71,85,105,0.63)" strokeDasharray="2 5" className="fp-dashflow"><line x1="180" y1="30" x2="180" y2="120" /><line x1="295" y1="48" x2="295" y2="140" /><line x1="95" y1="75" x2="95" y2="165" /></g>
+      <g stroke="rgba(110,100,74,0.63)" strokeDasharray="2 5" className="fp-dashflow"><line x1="180" y1="30" x2="180" y2="120" /><line x1="295" y1="48" x2="295" y2="140" /><line x1="95" y1="75" x2="95" y2="165" /></g>
       <Float dy={8} dur={5.5}><g transform={planeM(190, 175)}>
         <path d="M-82 -52 Q 0 -112 90 -40 Q 118 24 52 66 Q -16 106 -82 50 Z" fill={`url(#${id}-green-top)`} stroke="rgba(255,255,255,.5)" />
         <rect x="-34" y="-34" width="68" height="68" rx="3" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.55)" transform="rotate(8)" />
         <g transform="scale(.9) rotate(8)"><GCheck c="#eafffb" w={3} /></g>
       </g></Float>
-      <Glow from={0.2} dur={2}><g fill="#7df7ea"><circle cx="95" cy="165" r="3" /><circle cx="295" cy="140" r="3" /><circle cx="180" cy="118" r="3" /></g></Glow>
+      <Glow from={0.2} dur={2}><g fill="#ffd9a0"><circle cx="95" cy="165" r="3" /><circle cx="295" cy="140" r="3" /><circle cx="180" cy="118" r="3" /></g></Glow>
     </svg>
   );
 }
@@ -368,10 +368,10 @@ export function FeatArtCube() {
   return (
     <svg viewBox="0 0 380 270" className="h-auto w-full" role="img" aria-label="Tú decides">
       <Defs id={id} />
-      <g fill="none" stroke="rgba(71,85,105,0.63)" strokeDasharray="3 5" className="fp-dashflow"><path d="M30 120 Q 90 110 130 140" /><path d="M350 120 Q 290 110 250 140" /><path d="M130 200 L 175 175" /><path d="M250 200 L 205 175" /></g>
-      <rect x="130" y="118" width="6" height="6" fill="#35b8ff" opacity="0" /><rect x="96" y="102" width="6" height="6" fill="#35b8ff" /><rect x="296" y="124" width="6" height="6" fill="#35b8ff" />
+      <g fill="none" stroke="rgba(110,100,74,0.63)" strokeDasharray="3 5" className="fp-dashflow"><path d="M30 120 Q 90 110 130 140" /><path d="M350 120 Q 290 110 250 140" /><path d="M130 200 L 175 175" /><path d="M250 200 L 205 175" /></g>
+      <rect x="130" y="118" width="6" height="6" fill="#e2a63a" opacity="0" /><rect x="96" y="102" width="6" height="6" fill="#e2a63a" /><rect x="296" y="124" width="6" height="6" fill="#e2a63a" />
       <Float dy={8} dur={5.5}><Slab id={id} cx={190} cy={118} w={92} d={92} h={92} tone="rose"><g transform="scale(1.1)"><GCheck c="#eafffb" /></g></Slab></Float>
-      <Glow from={0.2} dur={2}><circle cx="132" cy="188" r="3" fill="#7df7ea" /><circle cx="248" cy="196" r="3" fill="#7df7ea" /></Glow>
+      <Glow from={0.2} dur={2}><circle cx="132" cy="188" r="3" fill="#ffd9a0" /><circle cx="248" cy="196" r="3" fill="#ffd9a0" /></Glow>
     </svg>
   );
 }
@@ -381,7 +381,7 @@ export function FeatArtBars() {
   return (
     <svg viewBox="0 0 380 270" className="h-auto w-full" role="img" aria-label="Seguimiento en tiempo real">
       <Defs id={id} />
-      <Glow from={0.7} dur={3}><polygon points={pts([p(-10, -10, 0), p(150, -10, 0), p(150, 150, 0), p(-10, 150, 0)])} fill="rgba(99,102,241,.16)" stroke="rgba(71,85,105,.4)" /></Glow>
+      <Glow from={0.7} dur={3}><polygon points={pts([p(-10, -10, 0), p(150, -10, 0), p(150, 150, 0), p(-10, 150, 0)])} fill="rgba(234,88,12,.16)" stroke="rgba(110,100,74,.4)" /></Glow>
       
       {[[20, 90, 34], [48, 62, 56], [76, 34, 82], [104, 6, 124]].map(([x, y, h], i) => {
         const px = p(x, y, 0);
@@ -402,11 +402,11 @@ export function SecurityArt() {
   return (
     <svg viewBox="0 0 500 430" className="h-auto w-full" role="img" aria-label="Capas del flujo">
       <Defs id={id} />
-      <g fill="rgba(71,85,105,.3)">{Array.from({ length: 60 }).map((_, i) => <circle key={i} cx={300 + (i % 10) * 20} cy={30 + Math.floor(i / 10) * 26} r="1.2" opacity={0.2 + ((i * 7) % 10) / 14} />)}</g>
+      <g fill="rgba(110,100,74,.3)">{Array.from({ length: 60 }).map((_, i) => <circle key={i} cx={300 + (i % 10) * 20} cy={30 + Math.floor(i / 10) * 26} r="1.2" opacity={0.2 + ((i * 7) % 10) / 14} />)}</g>
       <Slab id={id} cx={250} cy={225} w={190} d={190} h={8} tone="blue" />
-      <Glow from={0.4} dur={3.4}><ellipse cx="250" cy="395" rx="170" ry="30" fill="rgba(124,58,237,.32)" filter={`url(#${id}-blur)`} /></Glow>
+      <Glow from={0.4} dur={3.4}><ellipse cx="250" cy="395" rx="170" ry="30" fill="rgba(232,89,29,.32)" filter={`url(#${id}-blur)`} /></Glow>
       <Float dy={4} dur={5}><Slab id={id} cx={250} cy={186} w={190} d={190} h={8} tone="glass" opacity={0.9} /></Float>
-      <g stroke="rgba(71,85,105,0.43)" strokeDasharray="2 5" className="fp-dashflow"><line x1="156" y1="168" x2="156" y2="248" /><line x1="318" y1="200" x2="318" y2="272" /></g>
+      <g stroke="rgba(110,100,74,0.43)" strokeDasharray="2 5" className="fp-dashflow"><line x1="156" y1="168" x2="156" y2="248" /><line x1="318" y1="200" x2="318" y2="272" /></g>
       <Float dy={10} dur={5.5}><Slab id={id} cx={190} cy={78} w={82} d={82} h={46} tone="dark" edge="rgba(255,255,255,.2)"><g transform="scale(1.2)"><GClock c="#e5e7eb" w={2.6} /></g></Slab></Float>
       <Float dy={8} dur={6.4} delay={1}><Slab id={id} cx={335} cy={134} w={74} d={74} h={40} tone="dark" edge="rgba(255,255,255,.2)"><g transform="scale(1.1)"><GLink c="#e5e7eb" w={2.6} /></g></Slab></Float>
     </svg>
@@ -426,7 +426,7 @@ export function UseCaseArt({ glyph = "flow" }: { glyph?: "flow" | "doc" | "bell"
       <Packet d={polyD("205,255 300,210 350,238 430,196")} dur={4.5} />
       <Packet d={polyD("330,300 450,235 510,270 650,200 700,225")} dur={6} delay={1.2} />
       <Packet d={polyD("360,330 470,395 630,310 690,345 730,300")} dur={5.5} delay={0.6} />
-      <g fill="none" stroke="rgba(71,85,105,0.43)"><polyline points="190,260 280,205" /><polyline points="560,360 640,310 690,340" /></g>
+      <g fill="none" stroke="rgba(110,100,74,0.43)"><polyline points="190,260 280,205" /><polyline points="560,360 640,310 690,340" /></g>
       <Float dy={9} dur={6}><g transform={planeM(300, 305)}>
         <rect x="-70" y="-46" width="140" height="92" rx="6" fill={`url(#${id}-teal-top)`} stroke="rgba(255,255,255,.4)" />
         <g stroke="rgba(255,255,255,.7)" strokeWidth="8" strokeLinecap="round"><path d="M-44 -18 H44" /><path d="M-44 2 H34" /><path d="M-44 22 H12" /></g>
@@ -449,7 +449,7 @@ export function IntegrationsArt() {
   return (
     <svg viewBox="0 0 800 440" className="h-auto w-full" role="img" aria-label="Conexiones entre aplicaciones" style={{ filter: "blur(5px)", opacity: 0.85 }}>
       <Defs id={id} />
-      <g stroke="rgba(71,85,105,0.46)" strokeDasharray="2 5" className="fp-dashflow"><line x1="400" y1="110" x2="400" y2="200" /></g>
+      <g stroke="rgba(110,100,74,0.46)" strokeDasharray="2 5" className="fp-dashflow"><line x1="400" y1="110" x2="400" y2="200" /></g>
       <Float dy={12} dur={5.5}><Slab id={id} cx={400} cy={10} w={120} d={120} h={20} tone="violet"><circle r="40" fill="rgba(255,255,255,.25)" /><g transform="scale(1.1)"><GFlow c="#ffffff" /></g></Slab></Float>
       <Slab id={id} cx={400} cy={170} w={210} d={210} h={10} tone="blue" opacity={0.55} />
       <Float dy={5} dur={6}><Slab id={id} cx={400} cy={132} w={210} d={210} h={10} tone="teal" opacity={0.5} /></Float>
@@ -465,8 +465,8 @@ export function CtaArt() {
   return (
     <svg viewBox="0 0 440 360" className="h-auto w-full" role="img" aria-label="Pon en marcha tu flujo">
       <Defs id={id} />
-      <g fill="none" stroke="rgba(71,85,105,0.66)" strokeDasharray="4 6" className="fp-dashflow"><polyline points="10,290 110,232" /><polyline points="360,330 440,270" /></g>
-      <rect x="312" y="52" width="9" height="9" fill="#35b8ff" /><rect x="186" y="226" width="9" height="9" fill="#2f8cf0" />
+      <g fill="none" stroke="rgba(110,100,74,0.66)" strokeDasharray="4 6" className="fp-dashflow"><polyline points="10,290 110,232" /><polyline points="360,330 440,270" /></g>
+      <rect x="312" y="52" width="9" height="9" fill="#e2a63a" /><rect x="186" y="226" width="9" height="9" fill="#2f8cf0" />
       <Slab id={id} cx={235} cy={196} w={150} d={150} h={8} tone="glass" />
       <Float dy={4} dur={5}><Slab id={id} cx={235} cy={140} w={150} d={150} h={8} tone="glass" opacity={0.7} /></Float>
       <Float dy={11} dur={5.2}><Slab id={id} cx={235} cy={56} w={104} d={104} h={34} tone="violet"><g transform="scale(1.3)"><GFlow c="#ffffff" /></g></Slab></Float>

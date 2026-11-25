@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -13,6 +13,13 @@ import { BUSINESS, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/l
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const serif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 const mono = Geist_Mono({
@@ -40,8 +47,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${mono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-[#0b0d10]">
+    <html lang="es" className={`${inter.variable} ${mono.variable} ${serif.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col text-[#2a2618]">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HLCQMYWSQL"
           strategy="afterInteractive"

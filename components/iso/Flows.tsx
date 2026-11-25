@@ -36,7 +36,7 @@ const win = (a: number, b: number) => ({ t: [0, a, Math.min(a + 0.015, 0.99), b,
 /** Aparece en a y se queda hasta el final de la vuelta. */
 const from = (a: number) => ({ t: [0, a, Math.min(a + 0.02, 0.97), 0.96, 0.985, 1], opacity: [0, 0, 1, 1, 0, 0] });
 
-const C = { ink: "#0f172a", mute: "#64748b", faint: "#94a3b8", line: "#cbd5e1", amber: "#f59e0b", green: "#16a34a", blue: "#2563eb", violet: "#7c3aed", rose: "#e11d48", teal: "#0d9488" };
+const C = { ink: "#2a2618", mute: "#7c776a", faint: "#a8a08a", line: "#ddd6c4", amber: "#f59e0b", green: "#16a34a", blue: "#7a7259", violet: "#e8591d", rose: "#e11d48", teal: "#7d9350" };
 
 function Txt({ x, y, size = 15, weight = 600, fill = C.ink, anchor = "middle", children }: { x: number; y: number; size?: number; weight?: number; fill?: string; anchor?: "start" | "middle" | "end"; children: ReactNode }) {
   return <text x={x} y={y} fontSize={size} fontWeight={weight} fill={fill} textAnchor={anchor} fontFamily={FONT}>{children}</text>;
@@ -44,7 +44,7 @@ function Txt({ x, y, size = 15, weight = 600, fill = C.ink, anchor = "middle", c
 function Shadow({ id }: { id: string }) {
   return (
     <defs>
-      <filter id={`${id}-sh`} x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="9" floodColor="#0f172a" floodOpacity=".13" /></filter>
+      <filter id={`${id}-sh`} x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="9" floodColor="#2a2618" floodOpacity=".13" /></filter>
     </defs>
   );
 }
@@ -72,15 +72,15 @@ export function FlowApprovals() {
       <path d="M668 180 l12 10 l-12 10" stroke={C.line} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
       {/* 1 · Solicitud */}
-      <rect x="62" y="128" width="160" height="124" rx="18" fill="#fff" stroke="#e2e8f0" filter={`url(#${id}-sh)`} />
+      <rect x="62" y="128" width="160" height="124" rx="18" fill="#fff" stroke="#eae4d3" filter={`url(#${id}-sh)`} />
       <g transform="translate(142 184)"><Doc c={C.amber} /></g>
-      <S as="rect" x="62" y="128" width="160" height="124" rx="18" fill="none" strokeWidth="3" t={[0, 0.04, 0.12, 0.2, 1]} cs={[C.amber, C.amber, "#e2e8f0", "#e2e8f0", "#e2e8f0"]} />
+      <S as="rect" x="62" y="128" width="160" height="124" rx="18" fill="none" strokeWidth="3" t={[0, 0.04, 0.12, 0.2, 1]} cs={[C.amber, C.amber, "#eae4d3", "#eae4d3", "#eae4d3"]} />
       <Txt x={142} y={282}>Solicitud</Txt>
       <Txt x={142} y={303} size={13} weight={500} fill={C.mute}>Compra de material</Txt>
 
       {/* 2 · Responsable */}
       <circle cx="450" cy="190" r="66" fill="#fff" filter={`url(#${id}-sh)`} />
-      <S as="circle" cx="450" cy="190" r="66" fill="none" strokeWidth="5" t={[0, 0.28, 0.32, 0.5, 0.52, 0.94, 0.97, 1]} cs={["#e2e8f0", "#e2e8f0", C.amber, C.amber, C.green, C.green, "#e2e8f0", "#e2e8f0"]} />
+      <S as="circle" cx="450" cy="190" r="66" fill="none" strokeWidth="5" t={[0, 0.28, 0.32, 0.5, 0.52, 0.94, 0.97, 1]} cs={["#eae4d3", "#eae4d3", C.amber, C.amber, C.green, C.green, "#eae4d3", "#eae4d3"]} />
       <g transform="translate(450 192)"><Person /></g>
       <S t={[0, 0.3, 0.33, 0.5, 0.53, 1]} opacity={[0, 0, 1, 1, 0, 0]}>
         <motion.path d="M450 124 a66 66 0 0 1 66 66" stroke={C.amber} strokeWidth="5" strokeLinecap="round" fill="none" animate={{ rotate: 360 }} transition={{ duration: 1.1, repeat: Infinity, ease: "linear" }} style={{ transformBox: "view-box", transformOrigin: "450px 190px" }} />
@@ -95,7 +95,7 @@ export function FlowApprovals() {
 
       {/* 3 · Aprobado */}
       <circle cx="758" cy="190" r="66" fill="#fff" filter={`url(#${id}-sh)`} />
-      <S as="circle" cx="758" cy="190" r="66" strokeWidth="5" t={[0, 0.75, 0.8, 0.94, 0.97, 1]} cf={["#fff", "#fff", "#dcfce7", "#dcfce7", "#fff", "#fff"]} cs={["#e2e8f0", "#e2e8f0", C.green, C.green, "#e2e8f0", "#e2e8f0"]} />
+      <S as="circle" cx="758" cy="190" r="66" strokeWidth="5" t={[0, 0.75, 0.8, 0.94, 0.97, 1]} cf={["#fff", "#fff", "#dcfce7", "#dcfce7", "#fff", "#fff"]} cs={["#eae4d3", "#eae4d3", C.green, C.green, "#eae4d3", "#eae4d3"]} />
       <S as="path" d="M728 192 l22 22 l42 -46" fill="none" stroke={C.green} strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" t={[0, 0.78, 0.86, 0.95, 0.97, 1]} pathLength={[0, 0, 1, 1, 0, 0]} />
       <S as="circle" cx="758" cy="190" r="66" fill="none" stroke={C.green} strokeWidth="3" t={[0, 0.8, 0.92, 1]} scale={[1, 1, 1.5, 1.5]} opacity={[0, 0.7, 0, 0]} />
       <Txt x={758} y={282}>Aprobado</Txt>
@@ -110,7 +110,7 @@ export function FlowApprovals() {
       </S>
       {/* aviso */}
       <S t={[0, 0.82, 0.87, 0.95, 0.985, 1]} opacity={[0, 0, 1, 1, 0, 0]} my={[10, 10, 0, 0, -6, -6]}>
-        <rect x="662" y="62" width="192" height="40" rx="20" fill="#fff" stroke="#e2e8f0" filter={`url(#${id}-sh)`} />
+        <rect x="662" y="62" width="192" height="40" rx="20" fill="#fff" stroke="#eae4d3" filter={`url(#${id}-sh)`} />
         <g transform="translate(688 82) scale(.55)"><Bell /></g>
         <Txt x={768} y={87} size={13} weight={700} fill={C.ink}>Aviso enviado</Txt>
       </S>
@@ -122,7 +122,7 @@ export function FlowApprovals() {
         { x: 600, w: 230, label: "3 · Queda aprobada y avisada", a: [0.52, 1] },
       ].map((p, i) => (
         <g key={i}>
-          <rect x={p.x} y="356" width={p.w} height="40" rx="20" fill="#f1f5f9" />
+          <rect x={p.x} y="356" width={p.w} height="40" rx="20" fill="#f5f1e6" />
           <Txt x={p.x + p.w / 2} y={381} size={13.5} weight={600} fill={C.mute}>{p.label}</Txt>
           <S {...(i === 0 ? { t: [0, 0.29, 0.32, 1], opacity: [1, 1, 0, 0] } : i === 1 ? win(0.3, 0.5) : { t: [0, 0.5, 0.53, 0.96, 0.985, 1], opacity: [0, 0, 1, 1, 0, 0] })}>
             <rect x={p.x} y="356" width={p.w} height="40" rx="20" fill={[C.amber, C.violet, C.green][i]} />
@@ -148,12 +148,12 @@ export function FlowDocs() {
     <svg viewBox="0 0 900 440" className="h-auto w-full" role="img" aria-label="Un formulario genera un documento">
       <Shadow id={id} />
       {/* formulario */}
-      <rect x="50" y="64" width="250" height="278" rx="18" fill="#fff" stroke="#e2e8f0" filter={`url(#${id}-sh)`} />
+      <rect x="50" y="64" width="250" height="278" rx="18" fill="#fff" stroke="#eae4d3" filter={`url(#${id}-sh)`} />
       <Txt x={72} y={98} size={14} weight={700} anchor="start">Formulario</Txt>
       {campos.map((c, i) => (
         <g key={i}>
           <Txt x={74} y={c.y + 6} size={12} weight={600} fill={C.mute} anchor="start">{c.nombre}</Txt>
-          <rect x="74" y={c.y + 14} width="204" height="34" rx="9" fill="#f1f5f9" />
+          <rect x="74" y={c.y + 14} width="204" height="34" rx="9" fill="#f5f1e6" />
           <S as="rect" x="80" y={c.y + 22} width={c.w} height="18" rx="6" fill={c.col} origin="0% 50%" t={[0, c.a, c.b, 0.93, 0.97, 1]} scaleX={[0, 0, 1, 1, 0, 0]} />
         </g>
       ))}
@@ -166,13 +166,13 @@ export function FlowDocs() {
       ))}
 
       {/* tabla de datos */}
-      <rect x="388" y="104" width="150" height="198" rx="16" fill="#fff" stroke="#e2e8f0" filter={`url(#${id}-sh)`} />
+      <rect x="388" y="104" width="150" height="198" rx="16" fill="#fff" stroke="#eae4d3" filter={`url(#${id}-sh)`} />
       <rect x="388" y="104" width="150" height="34" rx="16" fill={C.ink} />
       <rect x="388" y="122" width="150" height="16" fill={C.ink} />
       <Txt x={463} y={126} size={13} weight={700} fill="#fff">Datos</Txt>
       {filas.map((y, i) => (
         <g key={i}>
-          <rect x="404" y={y - 10} width="118" height="24" rx="7" fill="#f1f5f9" />
+          <rect x="404" y={y - 10} width="118" height="24" rx="7" fill="#f5f1e6" />
           <S {...from(campos[i].b + 0.08)}>
             <rect x="404" y={y - 10} width="118" height="24" rx="7" fill={campos[i].col} opacity=".16" />
             <circle cx="418" cy={y + 2} r="5" fill={campos[i].col} />
@@ -188,11 +188,11 @@ export function FlowDocs() {
       </S>
 
       {/* documento */}
-      <rect x="610" y="64" width="240" height="278" rx="16" fill="#fff" stroke="#e2e8f0" filter={`url(#${id}-sh)`} />
+      <rect x="610" y="64" width="240" height="278" rx="16" fill="#fff" stroke="#eae4d3" filter={`url(#${id}-sh)`} />
       <rect x="634" y="90" width="92" height="14" rx="7" fill={C.ink} />
       <rect x="634" y="112" width="60" height="8" rx="4" fill={C.line} />
       {[0, 1, 2, 3, 4].map((i) => (
-        <S key={i} as="rect" x="634" y={146 + i * 30} width={[190, 170, 188, 150, 100][i]} height="12" rx="6" fill={i === 0 ? C.violet : "#cbd5e1"} origin="0% 50%" t={[0, 0.6 + i * 0.05, 0.64 + i * 0.05, 0.95, 0.98, 1]} scaleX={[0, 0, 1, 1, 0, 0]} />
+        <S key={i} as="rect" x="634" y={146 + i * 30} width={[190, 170, 188, 150, 100][i]} height="12" rx="6" fill={i === 0 ? C.violet : "#ddd6c4"} origin="0% 50%" t={[0, 0.6 + i * 0.05, 0.64 + i * 0.05, 0.95, 0.98, 1]} scaleX={[0, 0, 1, 1, 0, 0]} />
       ))}
       <S t={[0, 0.86, 0.9, 0.94, 0.97, 1]} scale={[0, 0, 1.25, 1, 1, 0]} opacity={[0, 0, 1, 1, 1, 0]}>
         <circle cx="808" cy="298" r="26" fill={C.green} /><path d="M796 298 l9 10 l17 -20" stroke="#fff" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
@@ -219,13 +219,13 @@ export function FlowReminders() {
     <svg viewBox="0 0 900 440" className="h-auto w-full" role="img" aria-label="Un aviso automático y el seguimiento de cada tarea">
       <Shadow id={id} />
       {/* calendario */}
-      <rect x="50" y="64" width="250" height="278" rx="18" fill="#fff" stroke="#e2e8f0" filter={`url(#${id}-sh)`} />
+      <rect x="50" y="64" width="250" height="278" rx="18" fill="#fff" stroke="#eae4d3" filter={`url(#${id}-sh)`} />
       <rect x="50" y="64" width="250" height="46" rx="18" fill={C.rose} />
       <rect x="50" y="90" width="250" height="20" fill={C.rose} />
       <Txt x={72} y={94} size={15} weight={700} fill="#fff" anchor="start">Plazo</Txt>
       {Array.from({ length: 28 }).map((_, i) => {
         const cx = 72 + (i % 7) * 30, cy = 140 + Math.floor(i / 7) * 32;
-        return <rect key={i} x={cx} y={cy} width="22" height="22" rx="7" fill={i === 18 ? C.rose : "#f1f5f9"} />;
+        return <rect key={i} x={cx} y={cy} width="22" height="22" rx="7" fill={i === 18 ? C.rose : "#f5f1e6"} />;
       })}
       <S as="rect" x="192" y="204" width="22" height="22" rx="7" fill="none" stroke={C.rose} strokeWidth="3" t={[0, 0.1, 0.2, 0.3, 0.45, 1]} scale={[1, 1.5, 1, 1.5, 1, 1]} opacity={[0.9, 0.2, 0.9, 0.2, 0.9, 0.9]} />
       <S {...win(0, 0.3)}><Txt x={175} y={330} size={13} weight={700} fill={C.rose}>Vence en 2 días</Txt></S>
@@ -249,27 +249,27 @@ export function FlowReminders() {
       ))}
 
       {/* seguimiento */}
-      <rect x="600" y="64" width="250" height="278" rx="18" fill="#fff" stroke="#e2e8f0" filter={`url(#${id}-sh)`} />
+      <rect x="600" y="64" width="250" height="278" rx="18" fill="#fff" stroke="#eae4d3" filter={`url(#${id}-sh)`} />
       <Txt x={622} y={98} size={14} weight={700} anchor="start">Seguimiento</Txt>
       {filas.map((f, i) => (
         <g key={i}>
           <circle cx="640" cy={f.y + 18} r="16" fill={f.col} opacity=".18" /><circle cx="640" cy={f.y + 14} r="5.5" fill={f.col} />
           <path d={`M630 ${f.y + 30} C631 ${f.y + 22} 649 ${f.y + 22} 650 ${f.y + 30}`} stroke={f.col} strokeWidth="3" fill="none" strokeLinecap="round" />
-          <rect x="664" y={f.y + 8} width="66" height="9" rx="4.5" fill="#cbd5e1" />
-          <rect x="664" y={f.y + 22} width="44" height="7" rx="3.5" fill="#e2e8f0" />
+          <rect x="664" y={f.y + 8} width="66" height="9" rx="4.5" fill="#ddd6c4" />
+          <rect x="664" y={f.y + 22} width="44" height="7" rx="3.5" fill="#eae4d3" />
           {/* estados */}
           <S t={[0, 0.51, 0.52, 1]} opacity={[1, 1, 0, 0]}>
             <rect x="752" y={f.y + 6} width="80" height="26" rx="13" fill="#fef3c7" /><Txt x={792} y={f.y + 24} size={11.5} weight={700} fill="#b45309">Pendiente</Txt>
           </S>
           <S t={[0, 0.51, 0.52, f.done - 0.01, f.done, 1]} opacity={[0, 0, 1, 1, 0, 0]}>
-            <rect x="752" y={f.y + 6} width="80" height="26" rx="13" fill="#dbeafe" /><Txt x={792} y={f.y + 24} size={11.5} weight={700} fill="#1d4ed8">En curso</Txt>
+            <rect x="752" y={f.y + 6} width="80" height="26" rx="13" fill="#ece7da" /><Txt x={792} y={f.y + 24} size={11.5} weight={700} fill="#5f5844">En curso</Txt>
           </S>
           <S t={[0, f.done - 0.01, f.done, 0.96, 0.985, 1]} opacity={[0, 0, 1, 1, 0, 0]}>
             <rect x="752" y={f.y + 6} width="80" height="26" rx="13" fill="#dcfce7" /><Txt x={792} y={f.y + 24} size={11.5} weight={700} fill="#15803d">✓ Hecho</Txt>
           </S>
         </g>
       ))}
-      <rect x="624" y="318" width="202" height="9" rx="4.5" fill="#e2e8f0" />
+      <rect x="624" y="318" width="202" height="9" rx="4.5" fill="#eae4d3" />
       <S as="rect" x="624" y="318" width="202" height="9" rx="4.5" fill={C.green} origin="0% 50%" t={[0, 0.52, 0.66, 0.78, 0.9, 0.96, 1]} scaleX={[0, 0, 0.33, 0.66, 1, 1, 0]} />
 
       {/* etiquetas */}

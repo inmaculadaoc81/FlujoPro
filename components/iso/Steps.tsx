@@ -13,9 +13,9 @@ const FONT = "var(--font-inter), system-ui, sans-serif";
 export function Chip({ x, y, w, children, dot }: { x: number; y: number; w: number; children: ReactNode; dot?: string }) {
   return (
     <g>
-      <rect x={x - w / 2} y={y - 13} width={w} height="26" rx="13" fill="#fff" stroke="#e2e8f0" style={{ filter: "drop-shadow(0 6px 10px rgba(15,23,42,.12))" }} />
+      <rect x={x - w / 2} y={y - 13} width={w} height="26" rx="13" fill="#fff" stroke="#eae4d3" style={{ filter: "drop-shadow(0 6px 10px rgba(70,55,20,.12))" }} />
       {dot ? <circle cx={x - w / 2 + 14} cy={y} r="4.5" fill={dot} /> : null}
-      <text x={x + (dot ? 8 : 0)} y={y + 4.2} textAnchor="middle" fontSize="12" fontWeight="700" fill="#0f172a" fontFamily={FONT}>{children}</text>
+      <text x={x + (dot ? 8 : 0)} y={y + 4.2} textAnchor="middle" fontSize="12" fontWeight="700" fill="#2a2618" fontFamily={FONT}>{children}</text>
     </g>
   );
 }
@@ -32,8 +32,8 @@ export function StepUnderstand() {
       <g>
         <Slab id={id} cx={cx} cy={cy} w={72} d={54} h={6} tone={urgente ? "amber" : "paper"} />
         <g transform={planeM(tx, ty)}>
-          <rect x="-27" y="-17" width="10" height="10" rx="2" fill="none" stroke={urgente ? "#7c2d12" : "#94a3b8"} strokeWidth="2" />
-          <g stroke={urgente ? "#7c2d12" : "#94a3b8"} strokeWidth="4" strokeLinecap="round">
+          <rect x="-27" y="-17" width="10" height="10" rx="2" fill="none" stroke={urgente ? "#7c2d12" : "#a8a08a"} strokeWidth="2" />
+          <g stroke={urgente ? "#7c2d12" : "#a8a08a"} strokeWidth="4" strokeLinecap="round">
             <path d="M-10 -12 H26" /><path d="M-26 2 H22" /><path d="M-26 14 H6" />
           </g>
         </g>
@@ -56,9 +56,9 @@ export function StepUnderstand() {
         animate={{ x: [-64, 20, -40, 14, 14, -64], y: [-6, -52, 12, 22, 22, -6] }}
         transition={{ duration: 7, times: [0, 0.2, 0.42, 0.62, 0.9, 1], repeat: Infinity, ease: "easeInOut" }}
       >
-        <path d="M226 196 l34 34" stroke="#1e293b" strokeWidth="13" strokeLinecap="round" />
-        <path d="M226 196 l34 34" stroke="#475569" strokeWidth="5" strokeLinecap="round" />
-        <circle cx="197" cy="167" r="38" fill="#7dd3fc" fillOpacity=".18" stroke="#1e293b" strokeWidth="7" />
+        <path d="M226 196 l34 34" stroke="#35301f" strokeWidth="13" strokeLinecap="round" />
+        <path d="M226 196 l34 34" stroke="#5d5745" strokeWidth="5" strokeLinecap="round" />
+        <circle cx="197" cy="167" r="38" fill="#f3d08a" fillOpacity=".18" stroke="#35301f" strokeWidth="7" />
         <path d="M172 155 a28 28 0 0 1 22 -17" stroke="#fff" strokeWidth="5" strokeLinecap="round" fill="none" />
       </motion.g>
       {/* aviso: aquí se pierde tiempo */}
@@ -87,7 +87,7 @@ export function StepDesign() {
     </motion.g>
   );
   const Trazo = ({ d, a, b }: { d: string; a: number; b: number }) => (
-    <motion.path d={d} fill="none" stroke="#312e81" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round"
+    <motion.path d={d} fill="none" stroke="#7c2d12" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round"
       animate={{ pathLength: [0, 0, 0, 1, 1, 1], opacity: [0, 0, 1, 1, 1, 0] }} transition={{ duration: D2, times: [0, a, a + 0.015, b, 0.95, 1], repeat: Infinity }} />
   );
 
@@ -104,8 +104,8 @@ export function StepDesign() {
     <svg viewBox="0 0 380 300" className="h-auto w-full" role="img" aria-label="Dibujamos el flujo: inicio, tarea, decisión y fin">
       <Defs id={id} />
       {/* plano de diseño con cuadrícula */}
-      <Slab id={id} cx={p(0, 0, 0)[0]} cy={p(0, 0, 0)[1]} w={226} d={174} h={8} tone="plano" edge="rgba(99,102,241,.45)" />
-      <g stroke="rgba(99,102,241,.22)" strokeWidth="1">
+      <Slab id={id} cx={p(0, 0, 0)[0]} cy={p(0, 0, 0)[1]} w={226} d={174} h={8} tone="plano" edge="rgba(234,88,12,.45)" />
+      <g stroke="rgba(234,88,12,.22)" strokeWidth="1">
         {Array.from({ length: 8 }).map((_, i) => { const a = pt((i + 1) * 25, 0, 8), b = pt((i + 1) * 25, 174, 8); return <line key={`x${i}`} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} />; })}
         {Array.from({ length: 6 }).map((_, i) => { const a = pt(0, (i + 1) * 25, 8), b = pt(226, (i + 1) * 25, 8); return <line key={`y${i}`} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} />; })}
       </g>
@@ -142,8 +142,8 @@ export function StepDesign() {
       <motion.g animate={{ x: camino.map((c) => c[0]), y: camino.map((c) => c[1]), opacity: [0, 1, 1, 1, 1, 1, 1, 0] }} transition={{ duration: D2, times: tiempos, repeat: Infinity, ease: "linear" }}>
         <g transform="rotate(38)">
           <path d="M0 0 L-6 -13 H6 Z" fill="#fde68a" stroke="#92400e" />
-          <path d="M0 0 L-2.2 -5 H2.2 Z" fill="#0f172a" />
-          <rect x="-6" y="-58" width="12" height="45" fill="#4f46e5" />
+          <path d="M0 0 L-2.2 -5 H2.2 Z" fill="#2a2618" />
+          <rect x="-6" y="-58" width="12" height="45" fill="#ea580c" />
           <rect x="-6" y="-66" width="12" height="9" rx="3" fill="#fb7185" />
         </g>
       </motion.g>
@@ -185,17 +185,17 @@ export function StepRun() {
     <svg viewBox="0 0 380 300" className="h-auto w-full" role="img" aria-label="El flujo en marcha: las tareas entran pendientes y salen hechas">
       <Defs id={id} />
       {/* cinta */}
-      <Slab id={id} cx={bx} cy={by} w={L.w} d={L.d} h={L.h} tone="dark" edge="rgba(148,163,184,.5)" />
+      <Slab id={id} cx={bx} cy={by} w={L.w} d={L.d} h={L.h} tone="dark" edge="rgba(168,160,138,.5)" />
       <clipPath id={`${id}-cinta`}><polygon points={pts([p(0, 0, L.h), p(L.w, 0, L.h), p(L.w, L.d, L.h), p(0, L.d, L.h)])} /></clipPath>
       <g clipPath={`url(#${id}-cinta)`}>
         <motion.g animate={{ x: [0, dx(24)], y: [0, dy(24)] }} transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}>
-          {Array.from({ length: 13 }).map((_, i) => { const a = p((i - 1) * 24, 6, L.h), b = p((i - 1) * 24, L.d - 6, L.h); return <line key={i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke="#64748b" strokeWidth="4" strokeLinecap="round" />; })}
+          {Array.from({ length: 13 }).map((_, i) => { const a = p((i - 1) * 24, 6, L.h), b = p((i - 1) * 24, L.d - 6, L.h); return <line key={i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke="#7c776a" strokeWidth="4" strokeLinecap="round" />; })}
         </motion.g>
       </g>
       {/* rodillos */}
       {[20, 78, 186, 244].map((u) => { const [x, y] = p(u, L.d, 3); return (
         <motion.g key={u} animate={{ rotate: 360 }} transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }} style={{ transformBox: "fill-box", transformOrigin: "center" }}>
-          <circle cx={x} cy={y} r="7" fill="#cbd5e1" stroke="#475569" strokeWidth="2" /><path d={`M${x - 5} ${y} H${x + 5} M${x} ${y - 5} V${y + 5}`} stroke="#475569" strokeWidth="1.6" />
+          <circle cx={x} cy={y} r="7" fill="#ddd6c4" stroke="#5d5745" strokeWidth="2" /><path d={`M${x - 5} ${y} H${x + 5} M${x} ${y - 5} V${y + 5}`} stroke="#5d5745" strokeWidth="1.6" />
         </motion.g>
       ); })}
 
@@ -212,7 +212,7 @@ export function StepRun() {
       <Slab id={id} cx={maquina[0]} cy={maquina[1]} w={58} d={86} h={62} tone="violet">
         <motion.g animate={{ rotate: 360 }} transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }} style={{ transformBox: "fill-box", transformOrigin: "center" }}>
           {Array.from({ length: 8 }).map((_, i) => <rect key={i} x="-4" y="-25" width="8" height="11" rx="2" fill="#fff" transform={`rotate(${i * 45})`} />)}
-          <circle r="17" fill="#fff" /><circle r="7" fill="#5b21b6" />
+          <circle r="17" fill="#fff" /><circle r="7" fill="#9a3412" />
         </motion.g>
       </Slab>
 

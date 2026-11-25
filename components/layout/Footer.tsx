@@ -8,23 +8,23 @@ const X = () => <svg width="17" height="17" viewBox="0 0 24 24" fill="currentCol
 export default function Footer() {
   const col = (titulo: string, items: [string, string][]) => (
     <div>
-      <h3 className="fp-mono text-[14px] font-medium uppercase text-[#0b0d10]">{titulo}</h3>
-      <ul className="mt-5 space-y-3.5 text-[14px] text-[#5b6168]">
-        {items.map(([t, h]) => <li key={t}><Link href={h} className="transition hover:text-[#0e7c8f]">{t}</Link></li>)}
+      <h3 className="fp-mono text-[14px] font-medium uppercase text-[#2a2618]">{titulo}</h3>
+      <ul className="mt-5 space-y-3.5 text-[14px] text-[#7c776a]">
+        {items.map(([t, h]) => <li key={t}><Link href={h} className="transition hover:text-[#c2571c]">{t}</Link></li>)}
       </ul>
     </div>
   );
   return (
-    <footer className="bg-white">
+    <footer className="relative">
       <div className="fp-hatch" />
       <div className="fp-wrap relative overflow-hidden">
         <div className="fp-hatch-line grid gap-10 px-5 pb-8 pt-16 md:grid-cols-[1.2fr_2fr] md:px-9">
           <div className="flex items-start gap-2.5">
             <img src="/logo-flujopro.svg" alt="" width={30} height={30} className="rounded-lg" />
-            <span className="text-[19px] font-semibold uppercase tracking-tight text-[#0b0d10]">FlujoPro</span>
+            <span className="text-[19px] font-semibold uppercase tracking-tight text-[#2a2618]">FlujoPro</span>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-            {col("Soluciones", [["Resumen", "/#servicios"], ["Casos de uso", "/#casos"], ["Integraciones", "/#integraciones"], ["Cómo funciona", "/#como-funciona"]])}
+            {col("Soluciones", [["Resumen", "/#servicios"], ["Casos de uso", "/#casos"], ["Cómo funciona", "/#como-funciona"]])}
             {col("Empresa", [["Preguntas", "/#preguntas"], ["Ubicación", "/#ubicacion"], ["Agendar cita", "/#agendar"], ["Blog", "/blog"]])}
             {col("Legal", [["Privacidad", "/politica-de-privacidad"], ["Términos", "/terminos"], ["Eliminar datos", "/eliminacion-de-datos"]])}
           </div>
@@ -32,9 +32,9 @@ export default function Footer() {
         <div className="pointer-events-none select-none px-5 pt-6 md:px-9" aria-hidden>
           <div className="fp-watermark text-center text-[16vw] font-semibold uppercase leading-[0.8] tracking-tight md:text-[10.5rem]">FlujoPro</div>
         </div>
-        <div className="-mt-16 flex flex-wrap items-center justify-between gap-4 px-5 pb-8 pt-4 text-[14px] text-[#5b6168] md:-mt-24 md:px-9">
+        <div className="-mt-16 flex flex-wrap items-center justify-between gap-4 px-5 pb-8 pt-4 text-[14px] text-[#7c776a] md:-mt-24 md:px-9">
           <span>© {new Date().getFullYear()} FlujoPro. Todos los derechos reservados.</span>
-          <div className="flex items-center gap-5 text-[#0b0d10]">
+          <div className="flex items-center gap-5 text-[#2a2618]">
             <a href="https://www.instagram.com/n8n.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Ig /></a>
             <a href="https://www.facebook.com/profile.php?id=61560356115236" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Fb /></a>
             <a href="https://www.youtube.com/@n8nlabs_madrid" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><Yt /></a>

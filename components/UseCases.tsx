@@ -22,31 +22,32 @@ export default function UseCases() {
   const { Flujo } = caso;
   return (
     <div>
-      <div role="tablist" className="flex flex-wrap gap-x-1 border-b border-[#e9ebee] px-6 md:px-9">
+      <div role="tablist" className="fp-card mx-auto mb-5 flex w-fit max-w-full flex-wrap justify-center gap-1 !rounded-full p-1.5">
         {CASOS.map((c) => (
           <button
             key={c.id} role="tab" aria-selected={c.id === activo} onClick={() => setActivo(c.id)}
-            className={`-mb-px border-b-2 px-3.5 py-3 text-[13.5px] font-medium transition ${c.id === activo ? "border-[#0b0d10] text-[#0b0d10]" : "border-transparent text-[#6b7280] hover:text-[#0b0d10]"}`}
+            className={`relative rounded-full px-4 py-2.5 text-[13.5px] font-semibold transition-colors ${c.id === activo ? "text-white" : "text-[#7c776a] hover:text-[#2a2618]"}`}
           >
-            {c.etiqueta}
+            {c.id === activo && <motion.span layoutId="fp-tab" className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f4a51f] to-[#e4481c] shadow-[0_8px_18px_rgba(232,89,29,0.3)]" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
+            <span className="relative">{c.etiqueta}</span>
           </button>
         ))}
       </div>
-      <div className="p-3 md:p-4">
-        <div className="fp-frame relative overflow-hidden rounded-2xl p-3 md:p-10">
-          <div className="fp-brackets relative rounded-md bg-white px-3 pb-24 pt-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:px-10">
+      <div>
+        <div className="fp-frame relative overflow-hidden rounded-[30px] p-3 md:p-8">
+          <div className="fp-window px-3 pt-6 pb-24 md:px-10">
             <AnimatePresence mode="wait">
               <motion.div key={caso.id} initial={{ opacity: 0, y: 14, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -10, scale: 0.98 }} transition={{ duration: 0.35 }}>
-                <p className="mb-2 text-center text-[15px] font-semibold tracking-tight text-[#0b0d10] md:text-[17px]">{caso.titulo}</p>
+                <p className="mb-2 text-center text-[15px] font-semibold tracking-tight text-[#2a2618] md:text-[17px]">{caso.titulo}</p>
                 <Flujo />
               </motion.div>
             </AnimatePresence>
           </div>
           <div className="relative -mt-20 grid gap-3 px-1 md:mx-auto md:max-w-[640px] md:grid-cols-3 md:px-0">
             {DATOS.map((d) => (
-              <div key={d.t} className="rounded-xl border border-[#e3e6e9] bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
-                <p className="text-[17px] font-medium text-[#0b0d10]">{d.t}</p>
-                <p className="mt-2 text-[13px] leading-snug text-[#5b6168]">{d.d}</p>
+              <div key={d.t} className="fp-card p-5">
+                <p className="text-[17px] font-medium text-[#2a2618]">{d.t}</p>
+                <p className="mt-2 text-[13px] leading-snug text-[#7c776a]">{d.d}</p>
               </div>
             ))}
           </div>
