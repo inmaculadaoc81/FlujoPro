@@ -10,7 +10,7 @@ import { Defs, Slab, proj, planeM, pts, C, S } from "@/components/iso/Iso";
 const FONT = "var(--font-inter), system-ui, sans-serif";
 
 /** Etiqueta flotante con texto. */
-function Chip({ x, y, w, children, dot }: { x: number; y: number; w: number; children: ReactNode; dot?: string }) {
+export function Chip({ x, y, w, children, dot }: { x: number; y: number; w: number; children: ReactNode; dot?: string }) {
   return (
     <g>
       <rect x={x - w / 2} y={y - 13} width={w} height="26" rx="13" fill="#fff" stroke="#e2e8f0" style={{ filter: "drop-shadow(0 6px 10px rgba(15,23,42,.12))" }} />

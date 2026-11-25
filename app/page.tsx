@@ -6,9 +6,8 @@ import UseCases from "@/components/UseCases";
 import { StepUnderstand, StepDesign, StepRun } from "@/components/iso/Steps";
 import { Reveal, Parallax, HatchBand } from "@/components/anim/Reveal";
 import {
-  HeroArt, FeatArtBig, FeatArtLink, FeatArtMemory, FeatArtShield, FeatArtCube, FeatArtBars,
-  SecurityArt, IntegrationsArt, CtaArt,
-} from "@/components/iso/Iso";
+  HeroScene, SceneWorkflow, SceneApps, SceneDocs, SceneApproval, ScenePuzzle, SceneReminders, SceneWhy, SceneIntegrations, SceneLaunch,
+} from "@/components/iso/Scenes";
 
 const WA = "https://api.whatsapp.com/send?phone=34606806376&text=Hola%2C%20FlujoPro.%20Quiero%20automatizar%20un%20proceso.";
 const RESENAS = "https://maps.app.goo.gl/NbdVhk4eLpygfeV88";
@@ -56,7 +55,7 @@ function Tarjeta({ titulo, texto, children, className = "", delay = 0 }: { titul
 
 export default function Home() {
   return (
-    <main className="bg-white text-[#0b0d10]">
+    <main className="overflow-x-clip bg-white text-[#0b0d10]">
       {/* ─────────── PORTADA ─────────── */}
       <section className="fp-aurora relative overflow-hidden pt-[70px]">
         <div className="fp-dots pointer-events-none absolute inset-0 opacity-50 [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
@@ -81,10 +80,7 @@ export default function Home() {
             </Reveal>
           </div>
           <Parallax from={0} to={-50} className="relative mt-4 px-2 md:px-6">
-            <Reveal scale={0.94} y={50} delay={0.35} amount={0.05}><HeroArt /></Reveal>
-            <Reveal y={10} delay={1.1} className="contents"><span className="fp-label left-[36%] top-[10%] hidden md:block">Flujos automáticos</span></Reveal>
-            <Reveal y={10} delay={1.3} className="contents"><span className="fp-label right-[8%] top-[27%] hidden md:block">Todo conectado</span></Reveal>
-            <Reveal y={10} delay={1.5} className="contents"><span className="fp-label left-[17%] top-[39%] hidden md:block">Sin perseguir tareas</span></Reveal>
+            <Reveal scale={0.94} y={50} delay={0.35} amount={0.05}><HeroScene /></Reveal>
           </Parallax>
         </div>
       </section>
@@ -123,20 +119,20 @@ export default function Home() {
         <div className="border-t border-[#e9ebee] px-4 py-5 md:px-[106px]">
           <div className="grid gap-4 md:grid-cols-2">
             <Tarjeta className="md:row-span-2" delay={0} titulo="Automatización de flujos de trabajo" texto="Conectamos pasos, responsables y herramientas para que cada tarea llegue a quien corresponde.">
-              <div className="w-full max-w-[380px]"><FeatArtBig /></div>
+              <div className="w-full max-w-[380px]"><SceneWorkflow /></div>
             </Tarjeta>
             <Tarjeta delay={0.12} titulo="Integración de aplicaciones" texto="Hacemos que correo, hojas de cálculo, CRM y otras plataformas compartan la información necesaria.">
-              <div className="w-full max-w-[380px]"><FeatArtLink /></div>
+              <div className="w-full max-w-[400px]"><SceneApps /></div>
             </Tarjeta>
             <Tarjeta delay={0.24} titulo="Documentos y formularios" texto="Capturamos información, generamos documentos y organizamos los datos sin volver a copiarlos.">
-              <div className="w-full max-w-[380px]"><FeatArtMemory /></div>
+              <div className="w-full max-w-[400px]"><SceneDocs /></div>
             </Tarjeta>
           </div>
         </div>
         <div className="grid gap-4 px-4 pb-6 md:grid-cols-3 md:px-[34px]">
-          <Tarjeta delay={0} titulo="Aprobaciones sin perseguir a nadie" texto="Solicitudes, validaciones y avisos que siguen su recorrido sin cadenas interminables de mensajes."><div className="w-full max-w-[340px]"><FeatArtShield /></div></Tarjeta>
-          <Tarjeta delay={0.12} titulo="Flujos adaptados a tu empresa" texto="Analizamos cómo trabajáis y diseñamos automatizaciones que encajen con vuestro proceso real."><div className="w-full max-w-[340px]"><FeatArtCube /></div></Tarjeta>
-          <Tarjeta delay={0.24} titulo="Recordatorios y seguimiento" texto="Los plazos dejan de depender de la memoria: avisos y estados para saber qué falta y quién lo lleva."><div className="w-full max-w-[340px]"><FeatArtBars /></div></Tarjeta>
+          <Tarjeta delay={0} titulo="Aprobaciones sin perseguir a nadie" texto="Solicitudes, validaciones y avisos que siguen su recorrido sin cadenas interminables de mensajes."><div className="w-full max-w-[360px]"><SceneApproval /></div></Tarjeta>
+          <Tarjeta delay={0.12} titulo="Flujos adaptados a tu empresa" texto="Analizamos cómo trabajáis y diseñamos automatizaciones que encajen con vuestro proceso real."><div className="w-full max-w-[360px]"><ScenePuzzle /></div></Tarjeta>
+          <Tarjeta delay={0.24} titulo="Recordatorios y seguimiento" texto="Los plazos dejan de depender de la memoria: avisos y estados para saber qué falta y quién lo lleva."><div className="w-full max-w-[360px]"><SceneReminders /></div></Tarjeta>
         </div>
       </section>
       <Hatch />
@@ -160,7 +156,7 @@ export default function Home() {
               ))}
             </ul>
           </Reveal>
-          <Reveal x={40} y={0} scale={0.95} delay={0.15} className="mx-auto w-full max-w-[520px]"><SecurityArt /></Reveal>
+          <Reveal x={40} y={0} scale={0.95} delay={0.15} className="mx-auto w-full max-w-[520px]"><SceneWhy /></Reveal>
         </div>
       </section>
       <Hatch />
@@ -178,24 +174,21 @@ export default function Home() {
       {/* ─────────── INTEGRACIONES ─────────── */}
       <section id="integraciones" className="fp-wrap relative overflow-hidden bg-white">
         <Cabecera pill="Integraciones" titulo="Conecta FlujoPro con tu forma de trabajar" texto="Conectamos correo, hojas de cálculo, CRM y otras plataformas, sin reemplazar lo que ya usas." />
-        <div className="relative px-5 pb-24 md:px-0">
-          <div className="pointer-events-none absolute left-1/2 top-0 hidden h-[560px] w-[1000px] -translate-x-1/2 rounded-full border border-dashed border-slate-300/80 md:block [mask-image:linear-gradient(to_bottom,transparent_0%,black_30%,black_70%,transparent_100%)]" />
-          <Reveal scale={0.9} y={30} className="relative mx-auto max-w-[760px] opacity-90"><IntegrationsArt /></Reveal>
-          <Reveal x={-50} y={0} delay={0.2} className="absolute left-5 top-6 hidden w-[280px] md:left-10 md:block">
-            <div className="fp-card p-5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1384e0]"><FileText size={16} /></span>
-              <h3 className="mt-4 text-[18px] text-[#14171a]">Tus aplicaciones conectadas</h3>
-              <p className="mt-1.5 text-[13.5px] leading-snug text-[#6b7280]">Correo, hojas de cálculo, CRM y otras plataformas comparten la información necesaria.</p>
-            </div>
-          </Reveal>
-          <Reveal x={50} y={0} delay={0.35} className="absolute right-5 top-4 hidden w-[290px] md:right-10 md:block">
-            <div className="fp-card p-5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#17b890]"><FileText size={16} /></span>
-              <h3 className="mt-4 text-[18px] text-[#14171a]">Avisos en el momento justo</h3>
-              <p className="mt-1.5 text-[13.5px] leading-snug text-[#6b7280]">Solicitudes, validaciones y recordatorios que siguen su recorrido solos.</p>
-            </div>
-          </Reveal>
-          <div className="relative -mt-6 text-center"><Link href="#agendar" className="fp-btn-mint">Agendar una cita <ArrowUpRight size={16} /></Link></div>
+        <div className="px-4 pb-16 md:px-[34px]">
+          <Reveal scale={0.94} y={30} className="mx-auto max-w-[900px]"><SceneIntegrations /></Reveal>
+          <div className="mx-auto mt-6 grid max-w-[760px] gap-4 md:grid-cols-2">
+            {[
+              { color: "bg-[#1384e0]", t: "Tus aplicaciones conectadas", d: "Correo, hojas de cálculo, CRM y otras plataformas comparten la información necesaria." },
+              { color: "bg-[#17b890]", t: "Avisos en el momento justo", d: "Solicitudes, validaciones y recordatorios que siguen su recorrido solos." },
+            ].map((c, i) => (
+              <Reveal key={c.t} delay={i * 0.15} className="fp-card p-5">
+                <span className={`flex h-9 w-9 items-center justify-center rounded-lg text-white ${c.color}`}><FileText size={16} /></span>
+                <h3 className="mt-4 text-[18px] text-[#14171a]">{c.t}</h3>
+                <p className="mt-1.5 text-[13.5px] leading-snug text-[#6b7280]">{c.d}</p>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-8 text-center"><Link href="#agendar" className="fp-btn-mint">Agendar una cita <ArrowUpRight size={16} /></Link></div>
         </div>
       </section>
       <Hatch />
@@ -288,7 +281,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer" className="fp-btn-dark">WhatsApp</a>
             </div>
           </Reveal>
-          <Reveal x={50} y={0} scale={0.92} delay={0.15} className="mx-auto w-full max-w-[420px]"><CtaArt /></Reveal>
+          <Reveal x={50} y={0} scale={0.92} delay={0.15} className="mx-auto w-full max-w-[420px]"><SceneLaunch /></Reveal>
         </div>
       </section>
     </main>

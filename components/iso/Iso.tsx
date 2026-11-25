@@ -69,11 +69,11 @@ function Glow({ children, from = 0.5, dur = 3, delay = 0 }: { children: ReactNod
 }
 const polyD = (s: string) => "M" + s.trim().split(/\s+/).join(" L");
 // Línea de puntos por la que «circula» el flujo.
-function Wire({ d, color = "rgba(94,234,212,.55)", dash = "4 7", w = 1, speed = 1.6 }: { d: string; color?: string; dash?: string; w?: number; speed?: number }) {
+export function Wire({ d, color = "rgba(94,234,212,.55)", dash = "4 7", w = 1, speed = 1.6 }: { d: string; color?: string; dash?: string; w?: number; speed?: number }) {
   return <path d={d} fill="none" stroke={color} strokeWidth={w} strokeDasharray={dash} className="fp-dashflow" style={{ animationDuration: `${speed}s` }} />;
 }
 // Punto luminoso que recorre una línea.
-function Packet({ d, dur = 4, delay = 0, color = "#7df7ea" }: { d: string; dur?: number; delay?: number; color?: string }) {
+export function Packet({ d, dur = 4, delay = 0, color = "#7df7ea" }: { d: string; dur?: number; delay?: number; color?: string }) {
   return (
     <g>
       <circle r="6" fill={color} opacity=".25"><animateMotion dur={`${dur}s`} begin={`${delay}s`} repeatCount="indefinite" path={d} /></circle>
