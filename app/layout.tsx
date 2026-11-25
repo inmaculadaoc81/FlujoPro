@@ -1,3 +1,5 @@
+import ChatFatima from "@/components/ChatFatima";
+import AvisoCookies from "@/components/AvisoCookies";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Geist_Mono, Instrument_Serif } from "next/font/google";
@@ -79,6 +81,8 @@ export default async function RootLayout({
           {children}
           <Footer />
           <FlotanteWhatsApp />
+          <ChatFatima />
+          <AvisoCookies />
         </Movimiento>
       </body>
     </html>

@@ -406,3 +406,11 @@ body {
 /* Casos de uso en móvil: una plataforma por pantalla, al ritmo de las tres fases (9 s) */
 @media (max-width: 767px) { .fl-camara { width: 300%; animation: fl-camara 9s ease-in-out infinite; } }
 @keyframes fl-camara { 0%, 31% { transform: translateX(0); } 37%, 63% { transform: translateX(-33.3333%); } 69%, 96% { transform: translateX(-66.6667%); } 100% { transform: translateX(0); } }
+
+/* Chat «Fátima»: encima del botón de WhatsApp, por delante de la cabecera y con los colores de la web.
+   «:root:root» gana a la hoja de estilos del chat, que se carga después. */
+:root:root { --chat--color-primary: #e8591d; --chat--color-primary-shade-50: #d44f17; --chat--color-primary-shade-100: #bf4613; --chat--color--primary: #e8591d; --chat--color--primary-shade-50: #d44f17; --chat--color--primary--shade-100: #bf4613; --chat--color-secondary: #e8591d; --chat--color--secondary: #e8591d; --chat--color-secondary-shade-50: #d44f17; --chat--color-dark: #2a2618; --chat--color--dark: #2a2618; --chat--header--background: #2a2618; --chat--header--color: #fff; --chat--toggle--background: #e8591d; --chat--toggle--hover--background: #d44f17; --chat--toggle--active--background: #bf4613; --chat--toggle--size: 56px; --chat--window--width: 380px; --chat--window--bottom: 86px; --chat--window--right: 20px; --chat--window--z-index: 60; }
+#n8n-chat .chat-window-wrapper { bottom: 86px !important; right: 20px !important; z-index: 60 !important; }
+#n8n-chat .chat-window-toggle { background: #e8591d !important; }
+#n8n-chat .chat-header { background: #2a2618 !important; color: #fff !important; }
+#n8n-chat .chat-window { max-width: calc(100vw - 40px); max-height: min(70vh, 650px); }

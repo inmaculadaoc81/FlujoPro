@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight, Plus, MapPin, Clock, Phone, MessageCircle, Star } from "lucide-react";
 import Reserva from "@/components/Reserva";
+import FormularioContacto from "@/components/FormularioContacto";
 import UseCases from "@/components/UseCases";
 import { Reveal, Parallax } from "@/components/anim/Reveal";
 import { Section } from "@/components/anim/Section";
@@ -213,6 +214,7 @@ export default function Home() {
             </div>
             <div className="fp-card overflow-hidden p-2"><Reserva /></div>
           </div>
+          <div className="mt-4"><FormularioContacto /></div>
         </div>
       </Section>
     </main>
