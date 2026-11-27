@@ -23,7 +23,8 @@ export default function Header({ showBlog = false }: { showBlog?: boolean }) {
   const links = showBlog ? [...base, { label: "Blog", href: "/blog", id: "blog" }] : base;
   const [abierto, setAbierto] = useState(false);
   const pathname = usePathname();
-  const [oscura, setOscura] = useState(pathname === "/");
+  // null = aún sin medir. En el servidor la ruta de la portada puede llegar distinta (regeneración en Vercel), así que no se usa para pintar.
+  const [oscura, setOscura] = useState<boolean | null>(null);
   const [activa, setActiva] = useState("");
   const { scrollYProgress } = useScroll();
   const avance = useSpring(scrollYProgress, { stiffness: 140, damping: 28 });
@@ -49,7 +50,7 @@ export default function Header({ showBlog = false }: { showBlog?: boolean }) {
   const marcada = pathname.startsWith("/blog") ? "blog" : activa;
 
   return (
-    <header className={`fx-cabecera ${pathname === "/" ? "fx-cabecera-entra" : ""} ${oscura ? "fx-cab-noche" : "fx-cab-dia"}`}>
+    <header className={`fx-cabecera ${oscura === null ? "fx-cab-auto" : oscura ? "fx-cab-noche" : "fx-cab-dia"}`}>
       <div className="fx-cab-rejilla">
         <div className="fx-cab-celda">
           <Link href="/" className="flex items-center gap-2.5 pl-4" onClick={() => setAbierto(false)}>

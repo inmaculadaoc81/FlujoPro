@@ -446,7 +446,7 @@ body { color: #26272c; background: #ecedf6; letter-spacing: -0.015em; }
 
 /* Cabecera de tres celdas con líneas finas */
 .fx-cabecera { pointer-events: none; position: fixed; left: 10px; right: 10px; top: 10px; z-index: 50; }
-.fx-cabecera-entra { animation: fx-baja .55s cubic-bezier(.22,.7,.25,1) .4s both; }
+body:has(#inicio) .fx-cabecera { animation: fx-baja .55s cubic-bezier(.22,.7,.25,1) .4s both; }
 @keyframes fx-baja { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: none; } }
 .fx-cab-rejilla { pointer-events: auto; display: grid; grid-template-columns: 1fr auto; height: 68px; border: 1px solid; transition: background .35s, border-color .35s, color .35s; }
 @media (min-width: 1024px) { .fx-cab-rejilla { grid-template-columns: 1fr auto 1fr; } }
@@ -460,12 +460,12 @@ body { color: #26272c; background: #ecedf6; letter-spacing: -0.015em; }
 .fx-cab-principal { background: #fff; color: #101114; }
 .fx-cab-principal:hover { filter: brightness(.94); }
 .fx-cab-secundario:hover { filter: brightness(1.2); }
-.fx-cab-noche { color: #fff; }
-.fx-cab-noche .fx-cab-rejilla { border-color: rgba(255,255,255,.13); background: rgba(1,2,6,.12); }
-.fx-cab-noche .fx-cab-secundario { background: rgba(255,255,255,.12); color: #fff; }
-.fx-cab-dia { color: #26272c; }
-.fx-cab-dia .fx-cab-rejilla { border-color: #fff; background: rgba(236,237,246,.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); }
-.fx-cab-dia .fx-cab-secundario { background: #2a2b2f; color: #fff; }
+.fx-cab-noche, body:has(#inicio) .fx-cab-auto { color: #fff; }
+:is(.fx-cab-noche, body:has(#inicio) .fx-cab-auto) .fx-cab-rejilla { border-color: rgba(255,255,255,.13); background: rgba(1,2,6,.12); }
+:is(.fx-cab-noche, body:has(#inicio) .fx-cab-auto) .fx-cab-secundario { background: rgba(255,255,255,.12); color: #fff; }
+.fx-cab-dia, body:not(:has(#inicio)) .fx-cab-auto { color: #26272c; }
+:is(.fx-cab-dia, body:not(:has(#inicio)) .fx-cab-auto) .fx-cab-rejilla { border-color: #fff; background: rgba(236,237,246,.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); }
+:is(.fx-cab-dia, body:not(:has(#inicio)) .fx-cab-auto) .fx-cab-secundario { background: #2a2b2f; color: #fff; }
 .fx-cab-avance { height: 2px; transform-origin: left; background: linear-gradient(90deg, #8fb4ff, #2a3ff0); }
 
 /* Piezas compartidas con el resto de la web */
@@ -496,7 +496,7 @@ body { color: #26272c; background: #ecedf6; letter-spacing: -0.015em; }
 @media (prefers-reduced-motion: reduce) {
   .fx-letra, .fx-entra, .fx-b-aparece, .fx-b-sombra, .fx-b-sube, .fx-b-lados, .fx-b-plano { animation: none; opacity: 1; }
   .fx-b-trazo { animation: none; stroke-dashoffset: 0; }
-  .fx-aura, .fx-b-flota, .fx-b-pulso, .fx-vaiven, .fx-cae, .fx-onda, .fx-punto, .fx-cabecera-entra, .fp-dashflow, .fp-float { animation: none; }
+  .fx-aura, .fx-b-flota, .fx-b-pulso, .fx-vaiven, .fx-cae, .fx-onda, .fx-punto, body:has(#inicio) .fx-cabecera, .fp-dashflow, .fp-float { animation: none; }
 }
 
 /* Casos de uso en móvil: una plataforma por pantalla, al ritmo de las tres fases (9 s) */
