@@ -10,7 +10,7 @@ export const BUSINESS = {
   name: SITE_NAME,
   url: SITE_URL,
   email: "soporte@automatizacionesn8n.com",
-  telephone: "+34606806376",
+  telephone: "+34623201011",
   address: {
     streetAddress: "Calle Blasco de Garay 63, Local 2",
     addressLocality: "Madrid",

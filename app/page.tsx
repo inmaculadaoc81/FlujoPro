@@ -11,7 +11,7 @@ import Pasos from "@/components/sentry/Pasos";
 import Panel from "@/components/sentry/Panel";
 import { SceneWorkflow, SceneApps, SceneDocs, SceneApproval, ScenePuzzle, SceneReminders } from "@/components/iso/Scenes";
 
-const WA = "https://api.whatsapp.com/send?phone=34606806376&text=Hola%2C%20FlujoPro.%20Quiero%20automatizar%20un%20proceso.";
+const WA = "https://api.whatsapp.com/send?phone=34623201011&text=Hola%2C%20FlujoPro.%20Quiero%20automatizar%20un%20proceso.";
 const RESENAS = "https://maps.app.goo.gl/NbdVhk4eLpygfeV88";
 const MAPA = "https://maps.google.com/?q=Calle+Blasco+de+Garay+63+Chamberí+Madrid";
 
@@ -116,9 +116,9 @@ export default function Home() {
             <div id="ubicacion" className="flex flex-col gap-4">
               <div className="fp-card p-6">
                 <ul className="space-y-4 text-[14.5px] font-medium">
-                  <li><a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-[#2f4ef0]"><span className="fp-icono"><MessageCircle size={18} /></span>WhatsApp · +34 606 806 376</a></li>
-                  <li><a href="tel:+34606806376" className="flex items-center gap-3 hover:text-[#2f4ef0]"><span className="fp-icono"><Phone size={18} /></span>Atención telefónica 24 h · 365 días</a></li>
-                  <li><a href="tel:+34910054012" className="flex items-center gap-3 hover:text-[#2f4ef0]"><span className="fp-icono"><Phone size={18} /></span>Teléfono · +34 910 05 40 12</a></li>
+                  <li><a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-[#2f4ef0]"><span className="fp-icono"><MessageCircle size={18} /></span>WhatsApp · +34 623 201 011</a></li>
+                  <li><a href="tel:+34623201011" className="flex items-center gap-3 hover:text-[#2f4ef0]"><span className="fp-icono"><Phone size={18} /></span>Atención telefónica 24 h · 365 días</a></li>
+                  <li><a href="tel:+34623201011" className="flex items-center gap-3 hover:text-[#2f4ef0]"><span className="fp-icono"><Phone size={18} /></span>Teléfono · +34 623 201 011</a></li>
                   <li className="flex items-center gap-3"><span className="fp-icono"><Clock size={18} /></span>Lunes a viernes · 09:30–18:00</li>
                   <li><a href={MAPA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-[#2f4ef0]"><span className="fp-icono"><MapPin size={18} /></span>C/ Blasco de Garay 63, Local 2 · Chamberí · 28015 Madrid</a></li>
                   <li><a href={RESENAS} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-[#2f4ef0]"><span className="fp-icono"><Star size={18} /></span>Ver nuestras reseñas en Google</a></li>

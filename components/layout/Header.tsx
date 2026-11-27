@@ -16,7 +16,7 @@ const base = [
   { label: "Contacto", href: "/#agendar", id: "agendar" },
 ];
 
-const WA = "https://api.whatsapp.com/send?phone=34606806376&text=Hola%2C%20FlujoPro.%20Quiero%20automatizar%20un%20proceso.";
+const WA = "https://api.whatsapp.com/send?phone=34623201011&text=Hola%2C%20FlujoPro.%20Quiero%20automatizar%20un%20proceso.";
 
 // showBlog: el enlace al blog solo aparece cuando ya hay artículos publicados
 export default function Header({ showBlog = false }: { showBlog?: boolean }) {
