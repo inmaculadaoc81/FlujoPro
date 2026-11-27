@@ -23,7 +23,7 @@ export default function PoliticaPrivacidad() {
         {([
           {
             title: "1. Responsable del tratamiento",
-            body: "FlujoPro (en adelante «nosotros» o «la empresa») es el responsable del tratamiento de los datos personales recogidos a través del sitio web automatizacionflujostrabajo.com. Puedes contactarnos en kelatosclaude2@gmail.com.",
+            body: "FlujoPro (en adelante «nosotros» o «la empresa») es el responsable del tratamiento de los datos personales recogidos a través del sitio web automatizacionflujostrabajo.com. Puedes contactarnos en soporte@automatizacionesn8n.com.",
           },
           {
             title: "2. Datos que recopilamos",
@@ -43,7 +43,7 @@ export default function PoliticaPrivacidad() {
           },
           {
             title: "6. Tus derechos",
-            body: "Puedes ejercer tus derechos de acceso, rectificación, supresión, portabilidad, limitación y oposición enviando un correo a kelatosclaude2@gmail.com. Tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).",
+            body: "Puedes ejercer tus derechos de acceso, rectificación, supresión, portabilidad, limitación y oposición enviando un correo a soporte@automatizacionesn8n.com. Tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).",
           },
           {
             title: "7. Cookies",

@@ -51,7 +51,7 @@ export default function Terminos() {
           },
           {
             title: "8. Contacto",
-            body: "Para cualquier duda sobre estos términos, escríbenos a kelatosclaude2@gmail.com.",
+            body: "Para cualquier duda sobre estos términos, escríbenos a soporte@automatizacionesn8n.com.",
           },
         ] as const).map(({ title, body }) => (
           <section key={title} style={{ marginBottom: "2rem" }}>

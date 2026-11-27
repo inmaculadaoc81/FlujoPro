@@ -37,8 +37,9 @@ export function hslAHex(h: number, s: number, l: number): string {
 /** Colores y posiciones de los nodos de la portada de un artículo (compartido con la imagen para redes sociales). */
 export function disenoPortada(slug: string, category: string) {
   const h = hash(slug);
-  const tono = TONOS[category] ?? h % 360;
-  const tono2 = (tono + 38 + (h % 26)) % 360;
+  // siempre dentro de los azules del diseño: la categoría y el artículo solo cambian el matiz
+  const tono = 218 + ((TONOS[category] ?? h % 360) % 24);
+  const tono2 = 210 + (h % 24);
   const nodos = Array.from({ length: 5 }, (_, i) => ({
     x: 110 + i * 145 + ((h >> (i * 3)) & 31),
     y: 150 + (i % 2 === 0 ? 0 : 110) + ((h >> (i * 2 + 1)) & 47),

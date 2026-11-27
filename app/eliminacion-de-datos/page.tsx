@@ -31,7 +31,7 @@ export default function EliminacionDeDatos() {
           },
           {
             title: "Cómo enviar tu solicitud",
-            body: "Envía un correo electrónico a kelatosclaude2@gmail.com con el asunto «Solicitud de eliminación de datos». Incluye el nombre y la dirección de correo que utilizaste al contactarnos para que podamos localizar tu información.",
+            body: "Envía un correo electrónico a soporte@automatizacionesn8n.com con el asunto «Solicitud de eliminación de datos». Incluye el nombre y la dirección de correo que utilizaste al contactarnos para que podamos localizar tu información.",
           },
           {
             title: "Plazo de respuesta",
@@ -59,8 +59,8 @@ export default function EliminacionDeDatos() {
         <div style={{ marginTop: "3rem", padding: "1.5rem", background: "#f5f3ff", borderRadius: 12, border: "1px solid rgba(109,40,217,0.15)" }}>
           <p style={{ fontSize: "0.88rem", color: "#1e40af", margin: 0, fontWeight: 500 }}>
             Para solicitar la eliminación de tus datos escríbenos directamente a{" "}
-            <a href="mailto:kelatosclaude2@gmail.com" style={{ color: "#6d28d9", fontWeight: 600 }}>
-              kelatosclaude2@gmail.com
+            <a href="mailto:soporte@automatizacionesn8n.com" style={{ color: "#6d28d9", fontWeight: 600 }}>
+              soporte@automatizacionesn8n.com
             </a>
           </p>
         </div>

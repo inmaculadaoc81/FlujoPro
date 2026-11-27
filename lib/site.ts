@@ -12,7 +12,7 @@ export const BUSINESS = {
   email: "soporte@automatizacionesn8n.com",
   telephone: "+34606806376",
   address: {
-    streetAddress: "Calle Joaquín María López, 26",
+    streetAddress: "Calle Blasco de Garay 63, Local 2",
     addressLocality: "Madrid",
     postalCode: "28015",
     addressRegion: "Madrid",
